@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "bd61714c-15ba-437c-ac6d-1a198592064e",
+    "name": "Optica",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "ad131177-1834-4e7d-993e-b5af44139a7e",
+    "name": "Acitpo",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

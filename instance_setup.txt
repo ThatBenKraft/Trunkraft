@@ -1,0 +1,51 @@
+{
+  "MaxCount": 1,
+  "MinCount": 1,
+  "ImageId": "ami-0c7217cdde317cfec",
+  "InstanceType": "r7a.medium",
+  "KeyName": "Minecraft Server Key",
+  "EbsOptimized": true,
+  "BlockDeviceMappings": [
+    {
+      "DeviceName": "/dev/sdb",
+      "Ebs": {
+        "Encrypted": false,
+        "DeleteOnTermination": false,
+        "Iops": 3000,
+        "VolumeSize": 16,
+        "VolumeType": "gp3",
+        "Throughput": 125
+      }
+    }
+  ],
+  "NetworkInterfaces": [
+    {
+      "AssociatePublicIpAddress": true,
+      "DeviceIndex": 0,
+      "Groups": [
+        "sg-0d3085ebb6a7e4687"
+      ]
+    }
+  ],
+  "TagSpecifications": [
+    {
+      "ResourceType": "instance",
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "Minecraft Server"
+        }
+      ]
+    }
+  ],
+  "MetadataOptions": {
+    "HttpTokens": "required",
+    "HttpEndpoint": "enabled",
+    "HttpPutResponseHopLimit": 2
+  },
+  "PrivateDnsNameOptions": {
+    "HostnameType": "ip-name",
+    "EnableResourceNameDnsARecord": true,
+    "EnableResourceNameDnsAAAARecord": false
+  }
+}

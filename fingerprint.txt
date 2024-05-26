@@ -1,0 +1,839 @@
+ridge window [io  0x0000-0x0fff]
+[    2.582686] pci 0000:24:00.0:   bridge window [mem 0xc8500000-0xc8cfffff]
+[    2.586485] pci 0000:24:00.0:   bridge window [mem 0x2a2000000-0x2a4ffffff 64bit pref]
+[    2.590857] pci 0000:26:00.0: [1d0f:0200] type 01 class 0x060400
+[    2.594803] pci 0000:26:00.0: reg 0x10: [mem 0xc8600000-0xc86003ff]
+[    2.599287] pci 0000:26:00.1: [1d0f:0200] type 01 class 0x060400
+[    2.602795] pci 0000:26:00.1: reg 0x10: [mem 0xc8600400-0xc86007ff]
+[    2.607285] pci 0000:26:00.2: [1d0f:0200] type 01 class 0x060400
+[    2.610796] pci 0000:26:00.2: reg 0x10: [mem 0xc8600800-0xc8600bff]
+[    2.622651] pci 0000:25:00.0: PCI bridge to [bus 26-29]
+[    2.625084] pci 0000:25:00.0:   bridge window [io  0x0000-0x0fff]
+[    2.629239] pci 0000:25:00.0:   bridge window [mem 0xc8600000-0xc8cfffff]
+[    2.630696] pci 0000:25:00.0:   bridge window [mem 0x2a2000000-0x2a4ffffff 64bit pref]
+[    2.634886] pci 0000:27:00.0: [1d0f:ec20] type 00 class 0x020000
+[    2.638471] pci 0000:27:00.0: reg 0x10: [mem 0x00000000-0x00001fff]
+[    2.641286] pci 0000:27:00.0: reg 0x14: [mem 0x00000000-0x00001fff]
+[    2.645315] pci 0000:27:00.0: reg 0x18: [mem 0x00000000-0x0001ffff 64bit pref]
+[    2.650800] pci 0000:27:00.0: enabling Extended Tags
+[    2.654747] pci 0000:26:00.0: PCI bridge to [bus 27]
+[    2.657904] pci 0000:26:00.0:   bridge window [io  0x0000-0x0fff]
+[    2.661274] pci 0000:26:00.0:   bridge window [mem 0xc8700000-0xc88fffff]
+[    2.662696] pci 0000:26:00.0:   bridge window [mem 0x2a2000000-0x2a2ffffff 64bit pref]
+[    2.667028] pci 0000:26:00.1: PCI bridge to [bus 28]
+[    2.670211] pci 0000:26:00.1:   bridge window [io  0x0000-0x0fff]
+[    2.673242] pci 0000:26:00.1:   bridge window [mem 0xc8900000-0xc8afffff]
+[    2.677381] pci 0000:26:00.1:   bridge window [mem 0x2a3000000-0x2a3ffffff 64bit pref]
+[    2.683022] pci 0000:26:00.2: PCI bridge to [bus 29]
+[    2.686197] pci 0000:26:00.2:   bridge window [io  0x0000-0x0fff]
+[    2.689220] pci 0000:26:00.2:   bridge window [mem 0xc8b00000-0xc8cfffff]
+[    2.693401] pci 0000:26:00.2:   bridge window [mem 0x2a4000000-0x2a4ffffff 64bit pref]
+[    2.699224] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    2.702824] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    2.706819] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    2.710819] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    2.714412] ACPI: PCI: Interrupt link LNKS configured for IRQ 9
+[    2.719115] iommu: Default domain type: Translated 
+[    2.722676] iommu: DMA domain TLB invalidation policy: lazy mode 
+[    2.726921] SCSI subsystem initialized
+[    2.730810] ACPI: bus type USB registered
+[    2.733678] usbcore: registered new interface driver usbfs
+[    2.737131] usbcore: registered new interface driver hub
+[    2.738682] usbcore: registered new device driver usb
+[    2.742703] pps_core: LinuxPPS API ver. 1 registered
+[    2.746675] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    2.750677] PTP clock support registered
+[    2.754719] EDAC MC: Ver: 3.0.0
+[    2.759450] NetLabel: Initializing
+[    2.762075] NetLabel:  domain hash size = 128
+[    2.764947] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    2.766703] NetLabel:  unlabeled traffic allowed by default
+[    2.770727] mctp: management component transport protocol core
+[    2.774675] NET: Registered PF_MCTP protocol family
+[    2.777803] PCI: Using ACPI for IRQ routing
+[    2.791167] pci 0000:00:03.0: vgaarb: setting as boot VGA device
+[    2.794670] pci 0000:00:03.0: vgaarb: bridge control possible
+[    2.794674] pci 0000:00:03.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    2.794682] vgaarb: loaded
+[    2.797235] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0, 0, 0, 0, 0, 0
+[    2.801249] hpet0: 8 comparators, 32-bit 62.500000 MHz counter
+[    2.807740] clocksource: Switched to clocksource kvm-clock
+[    2.824591] VFS: Disk quotas dquot_6.6.0
+[    2.827424] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.831506] AppArmor: AppArmor Filesystem Enabled
+[    2.834613] pnp: PnP ACPI init
+[    2.837843] pnp: PnP ACPI: found 5 devices
+[    2.846592] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    2.852462] NET: Registered PF_INET protocol family
+[    2.855659] IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    2.862407] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    2.868106] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    2.873615] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    2.879281] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+[    2.884668] TCP: Hash tables configured (established 65536 bind 65536)
+[    2.888415] MPTCP token hash table entries: 8192 (order: 5, 196608 bytes, linear)
+[    2.893779] UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    2.897586] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    2.902866] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    2.906277] NET: Registered PF_XDP protocol family
+[    2.909386] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    2.912960] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    2.916542] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    2.920357] pci_bus 0000:00: resource 7 [mem 0xc0000000-0xc3ffffff window]
+[    2.924180] pci_bus 0000:00: resource 8 [mem 0x280000000-0x281ffffff window]
+[    2.928109] pci 0000:03:00.0: PCI bridge to [bus 04]
+[    2.931278] pci 0000:03:00.0:   bridge window [mem 0xc4300000-0xc44fffff]
+[    2.935071] pci 0000:03:00.0:   bridge window [mem 0x282000000-0x282ffffff 64bit pref]
+[    2.940569] pci 0000:03:00.1: PCI bridge to [bus 05]
+[    2.943762] pci 0000:03:00.1:   bridge window [mem 0xc4500000-0xc46fffff]
+[    2.947555] pci 0000:03:00.1:   bridge window [mem 0x283000000-0x283ffffff 64bit pref]
+[    2.953073] pci 0000:03:00.2: PCI bridge to [bus 06]
+[    2.956260] pci 0000:03:00.2:   bridge window [mem 0xc4700000-0xc48fffff]
+[    2.960070] pci 0000:03:00.2:   bridge window [mem 0x284000000-0x284ffffff 64bit pref]
+[    2.965612] pci 0000:03:00.3: PCI bridge to [bus 07]
+[    2.968802] pci 0000:03:00.3:   bridge window [mem 0xc4900000-0xc4afffff]
+[    2.972602] pci 0000:03:00.3:   bridge window [mem 0x285000000-0x285ffffff 64bit pref]
+[    2.978150] pci 0000:03:00.4: PCI bridge to [bus 08]
+[    2.981345] pci 0000:03:00.4:   bridge window [mem 0xc4b00000-0xc4cfffff]
+[    2.985136] pci 0000:03:00.4:   bridge window [mem 0x286000000-0x286ffffff 64bit pref]
+[    2.990668] pci 0000:03:00.5: PCI bridge to [bus 09]
+[    2.993851] pci 0000:03:00.5:   bridge window [mem 0xc4d00000-0xc4efffff]
+[    2.997644] pci 0000:03:00.5:   bridge window [mem 0x287000000-0x287ffffff 64bit pref]
+[    3.003162] pci 0000:03:00.6: PCI bridge to [bus 0a]
+[    3.006357] pci 0000:03:00.6:   bridge window [mem 0xc4f00000-0xc50fffff]
+[    3.010127] pci 0000:03:00.6:   bridge window [mem 0x288000000-0x288ffffff 64bit pref]
+[    3.015647] pci 0000:03:00.7: PCI bridge to [bus 0b]
+[    3.018818] pci 0000:03:00.7:   bridge window [mem 0xc5100000-0xc52fffff]
+[    3.022630] pci 0000:03:00.7:   bridge window [mem 0x289000000-0x289ffffff 64bit pref]
+[    3.028130] pci 0000:03:01.0: PCI bridge to [bus 0c]
+[    3.031327] pci 0000:03:01.0:   bridge window [mem 0xc5300000-0xc54fffff]
+[    3.035123] pci 0000:03:01.0:   bridge window [mem 0x28a000000-0x28affffff 64bit pref]
+[    3.040644] pci 0000:03:01.1: PCI bridge to [bus 0d]
+[    3.043836] pci 0000:03:01.1:   bridge window [mem 0xc5500000-0xc56fffff]
+[    3.047651] pci 0000:03:01.1:   bridge window [mem 0x28b000000-0x28bffffff 64bit pref]
+[    3.053175] pci 0000:03:01.2: PCI bridge to [bus 0e]
+[    3.056380] pci 0000:03:01.2:   bridge window [mem 0xc5700000-0xc58fffff]
+[    3.060184] pci 0000:03:01.2:   bridge window [mem 0x28c000000-0x28cffffff 64bit pref]
+[    3.065734] pci 0000:03:01.3: PCI bridge to [bus 0f]
+[    3.068949] pci 0000:03:01.3:   bridge window [mem 0xc5900000-0xc5afffff]
+[    3.072773] pci 0000:03:01.3:   bridge window [mem 0x28d000000-0x28dffffff 64bit pref]
+[    3.078274] pci 0000:03:01.4: PCI bridge to [bus 10]
+[    3.081456] pci 0000:03:01.4:   bridge window [mem 0xc5b00000-0xc5cfffff]
+[    3.085265] pci 0000:03:01.4:   bridge window [mem 0x28e000000-0x28effffff 64bit pref]
+[    3.090779] pci 0000:03:01.5: PCI bridge to [bus 11]
+[    3.093936] pci 0000:03:01.5:   bridge window [mem 0xc5d00000-0xc5efffff]
+[    3.097741] pci 0000:03:01.5:   bridge window [mem 0x28f000000-0x28fffffff 64bit pref]
+[    3.103265] pci 0000:03:01.6: PCI bridge to [bus 12]
+[    3.106474] pci 0000:03:01.6:   bridge window [mem 0xc5f00000-0xc60fffff]
+[    3.110283] pci 0000:03:01.6:   bridge window [mem 0x290000000-0x290ffffff 64bit pref]
+[    3.115816] pci 0000:03:01.7: PCI bridge to [bus 13]
+[    3.119039] pci 0000:03:01.7:   bridge window [mem 0xc6100000-0xc62fffff]
+[    3.122885] pci 0000:03:01.7:   bridge window [mem 0x291000000-0x291ffffff 64bit pref]
+[    3.128417] pci 0000:03:02.0: PCI bridge to [bus 14]
+[    3.131616] pci 0000:03:02.0:   bridge window [mem 0xc6300000-0xc64fffff]
+[    3.135401] pci 0000:03:02.0:   bridge window [mem 0x292000000-0x292ffffff 64bit pref]
+[    3.140934] pci 0000:03:02.1: PCI bridge to [bus 15]
+[    3.144133] pci 0000:03:02.1:   bridge window [mem 0xc6500000-0xc66fffff]
+[    3.147952] pci 0000:03:02.1:   bridge window [mem 0x293000000-0x293ffffff 64bit pref]
+[    3.153504] pci 0000:03:02.2: PCI bridge to [bus 16]
+[    3.156685] pci 0000:03:02.2:   bridge window [mem 0xc6700000-0xc68fffff]
+[    3.160495] pci 0000:03:02.2:   bridge window [mem 0x294000000-0x294ffffff 64bit pref]
+[    3.166032] pci 0000:03:02.3: PCI bridge to [bus 17]
+[    3.169212] pci 0000:03:02.3:   bridge window [mem 0xc6900000-0xc6afffff]
+[    3.173030] pci 0000:03:02.3:   bridge window [mem 0x295000000-0x295ffffff 64bit pref]
+[    3.178555] pci 0000:03:02.4: PCI bridge to [bus 18]
+[    3.181729] pci 0000:03:02.4:   bridge window [mem 0xc6b00000-0xc6cfffff]
+[    3.185525] pci 0000:03:02.4:   bridge window [mem 0x296000000-0x296ffffff 64bit pref]
+[    3.191064] pci 0000:03:02.5: PCI bridge to [bus 19]
+[    3.194275] pci 0000:03:02.5:   bridge window [mem 0xc6d00000-0xc6efffff]
+[    3.198051] pci 0000:03:02.5:   bridge window [mem 0x297000000-0x297ffffff 64bit pref]
+[    3.203547] pci 0000:03:02.6: PCI bridge to [bus 1a]
+[    3.206711] pci 0000:03:02.6:   bridge window [mem 0xc6f00000-0xc70fffff]
+[    3.210480] pci 0000:03:02.6:   bridge window [mem 0x298000000-0x298ffffff 64bit pref]
+[    3.215992] pci 0000:03:02.7: PCI bridge to [bus 1b]
+[    3.219169] pci 0000:03:02.7:   bridge window [mem 0xc7100000-0xc72fffff]
+[    3.222959] pci 0000:03:02.7:   bridge window [mem 0x299000000-0x299ffffff 64bit pref]
+[    3.228473] pci 0000:03:03.0: PCI bridge to [bus 1c]
+[    3.231638] pci 0000:03:03.0:   bridge window [mem 0xc7300000-0xc74fffff]
+[    3.235442] pci 0000:03:03.0:   bridge window [mem 0x29a000000-0x29affffff 64bit pref]
+[    3.240945] pci 0000:03:03.1: PCI bridge to [bus 1d]
+[    3.244123] pci 0000:03:03.1:   bridge window [mem 0xc7500000-0xc76fffff]
+[    3.247902] pci 0000:03:03.1:   bridge window [mem 0x29b000000-0x29bffffff 64bit pref]
+[    3.253393] pci 0000:03:03.2: PCI bridge to [bus 1e]
+[    3.256537] pci 0000:03:03.2:   bridge window [mem 0xc7700000-0xc78fffff]
+[    3.260316] pci 0000:03:03.2:   bridge window [mem 0x29c000000-0x29cffffff 64bit pref]
+[    3.265812] pci 0000:03:03.3: PCI bridge to [bus 1f]
+[    3.268980] pci 0000:03:03.3:   bridge window [mem 0xc7900000-0xc7afffff]
+[    3.272767] pci 0000:03:03.3:   bridge window [mem 0x29d000000-0x29dffffff 64bit pref]
+[    3.278299] pci 0000:03:03.4: PCI bridge to [bus 20]
+[    3.281465] pci 0000:03:03.4:   bridge window [mem 0xc7b00000-0xc7cfffff]
+[    3.285247] pci 0000:03:03.4:   bridge window [mem 0x29e000000-0x29effffff 64bit pref]
+[    3.290795] pci 0000:03:03.5: PCI bridge to [bus 21]
+[    3.293984] pci 0000:03:03.5:   bridge window [mem 0xc7d00000-0xc7efffff]
+[    3.297799] pci 0000:03:03.5:   bridge window [mem 0x29f000000-0x29fffffff 64bit pref]
+[    3.303318] pci 0000:03:03.6: PCI bridge to [bus 22]
+[    3.306539] pci 0000:03:03.6:   bridge window [mem 0xc7f00000-0xc80fffff]
+[    3.357041] pci 0000:03:03.6:   bridge window [mem 0x2a0000000-0x2a0ffffff 64bit pref]
+[    3.362576] pci 0000:23:00.0: BAR 0: assigned [mem 0xc8100000-0xc8103fff]
+[    3.366382] pci 0000:03:03.7: PCI bridge to [bus 23]
+[    3.369561] pci 0000:03:03.7:   bridge window [mem 0xc8100000-0xc82fffff]
+[    3.373367] pci 0000:03:03.7:   bridge window [mem 0x2a1000000-0x2a1ffffff 64bit pref]
+[    3.378902] pci 0000:02:00.0: PCI bridge to [bus 03-23]
+[    3.382180] pci 0000:02:00.0:   bridge window [mem 0xc4200000-0xc82fffff]
+[    3.385941] pci 0000:02:00.0:   bridge window [mem 0x282000000-0x2a1ffffff 64bit pref]
+[    3.391482] pci 0000:01:00.0: PCI bridge to [bus 02-23]
+[    3.394734] pci 0000:01:00.0:   bridge window [mem 0xc4100000-0xc82fffff]
+[    3.398514] pci 0000:01:00.0:   bridge window [mem 0x282000000-0x2a1ffffff 64bit pref]
+[    3.404074] pci_bus 0000:01: resource 4 [mem 0xc4000000-0xc82fffff window]
+[    3.407874] pci_bus 0000:01: resource 5 [mem 0x282000000-0x2a1ffffff window]
+[    3.411725] pci_bus 0000:02: resource 1 [mem 0xc4100000-0xc82fffff]
+[    3.415323] pci_bus 0000:02: resource 2 [mem 0x282000000-0x2a1ffffff 64bit pref]
+[    3.420600] pci_bus 0000:03: resource 1 [mem 0xc4200000-0xc82fffff]
+[    3.424186] pci_bus 0000:03: resource 2 [mem 0x282000000-0x2a1ffffff 64bit pref]
+[    3.429527] pci_bus 0000:04: resource 1 [mem 0xc4300000-0xc44fffff]
+[    3.433126] pci_bus 0000:04: resource 2 [mem 0x282000000-0x282ffffff 64bit pref]
+[    3.438459] pci_bus 0000:05: resource 1 [mem 0xc4500000-0xc46fffff]
+[    3.442072] pci_bus 0000:05: resource 2 [mem 0x283000000-0x283ffffff 64bit pref]
+[    3.447391] pci_bus 0000:06: resource 1 [mem 0xc4700000-0xc48fffff]
+[    3.451005] pci_bus 0000:06: resource 2 [mem 0x284000000-0x284ffffff 64bit pref]
+[    3.456365] pci_bus 0000:07: resource 1 [mem 0xc4900000-0xc4afffff]
+[    3.460000] pci_bus 0000:07: resource 2 [mem 0x285000000-0x285ffffff 64bit pref]
+[    3.465330] pci_bus 0000:08: resource 1 [mem 0xc4b00000-0xc4cfffff]
+[    3.468918] pci_bus 0000:08: resource 2 [mem 0x286000000-0x286ffffff 64bit pref]
+[    3.474294] pci_bus 0000:09: resource 1 [mem 0xc4d00000-0xc4efffff]
+[    3.477910] pci_bus 0000:09: resource 2 [mem 0x287000000-0x287ffffff 64bit pref]
+[    3.483261] pci_bus 0000:0a: resource 1 [mem 0xc4f00000-0xc50fffff]
+[    3.486901] pci_bus 0000:0a: resource 2 [mem 0x288000000-0x288ffffff 64bit pref]
+[    3.492197] pci_bus 0000:0b: resource 1 [mem 0xc5100000-0xc52fffff]
+[    3.495780] pci_bus 0000:0b: resource 2 [mem 0x289000000-0x289ffffff 64bit pref]
+[    3.501084] pci_bus 0000:0c: resource 1 [mem 0xc5300000-0xc54fffff]
+[    3.504722] pci_bus 0000:0c: resource 2 [mem 0x28a000000-0x28affffff 64bit pref]
+[    3.510044] pci_bus 0000:0d: resource 1 [mem 0xc5500000-0xc56fffff]
+[    3.513652] pci_bus 0000:0d: resource 2 [mem 0x28b000000-0x28bffffff 64bit pref]
+[    3.518976] pci_bus 0000:0e: resource 1 [mem 0xc5700000-0xc58fffff]
+[    3.522602] pci_bus 0000:0e: resource 2 [mem 0x28c000000-0x28cffffff 64bit pref]
+[    3.527932] pci_bus 0000:0f: resource 1 [mem 0xc5900000-0xc5afffff]
+[    3.531553] pci_bus 0000:0f: resource 2 [mem 0x28d000000-0x28dffffff 64bit pref]
+[    3.536902] pci_bus 0000:10: resource 1 [mem 0xc5b00000-0xc5cfffff]
+[    3.540543] pci_bus 0000:10: resource 2 [mem 0x28e000000-0x28effffff 64bit pref]
+[    3.545908] pci_bus 0000:11: resource 1 [mem 0xc5d00000-0xc5efffff]
+[    3.549545] pci_bus 0000:11: resource 2 [mem 0x28f000000-0x28fffffff 64bit pref]
+[    3.554847] pci_bus 0000:12: resource 1 [mem 0xc5f00000-0xc60fffff]
+[    3.558453] pci_bus 0000:12: resource 2 [mem 0x290000000-0x290ffffff 64bit pref]
+[    3.563756] pci_bus 0000:13: resource 1 [mem 0xc6100000-0xc62fffff]
+[    3.567354] pci_bus 0000:13: resource 2 [mem 0x291000000-0x291ffffff 64bit pref]
+[    3.572670] pci_bus 0000:14: resource 1 [mem 0xc6300000-0xc64fffff]
+[    3.576247] pci_bus 0000:14: resource 2 [mem 0x292000000-0x292ffffff 64bit pref]
+[    3.581587] pci_bus 0000:15: resource 1 [mem 0xc6500000-0xc66fffff]
+[    3.585177] pci_bus 0000:15: resource 2 [mem 0x293000000-0x293ffffff 64bit pref]
+[    3.590532] pci_bus 0000:16: resource 1 [mem 0xc6700000-0xc68fffff]
+[    3.594160] pci_bus 0000:16: resource 2 [mem 0x294000000-0x294ffffff 64bit pref]
+[    3.599484] pci_bus 0000:17: resource 1 [mem 0xc6900000-0xc6afffff]
+[    3.603103] pci_bus 0000:17: resource 2 [mem 0x295000000-0x295ffffff 64bit pref]
+[    3.608452] pci_bus 0000:18: resource 1 [mem 0xc6b00000-0xc6cfffff]
+[    3.612071] pci_bus 0000:18: resource 2 [mem 0x296000000-0x296ffffff 64bit pref]
+[    3.617421] pci_bus 0000:19: resource 1 [mem 0xc6d00000-0xc6efffff]
+[    3.621029] pci_bus 0000:19: resource 2 [mem 0x297000000-0x297ffffff 64bit pref]
+[    3.626396] pci_bus 0000:1a: resource 1 [mem 0xc6f00000-0xc70fffff]
+[    3.629970] pci_bus 0000:1a: resource 2 [mem 0x298000000-0x298ffffff 64bit pref]
+[    3.635326] pci_bus 0000:1b: resource 1 [mem 0xc7100000-0xc72fffff]
+[    3.638925] pci_bus 0000:1b: resource 2 [mem 0x299000000-0x299ffffff 64bit pref]
+[    3.644257] pci_bus 0000:1c: resource 1 [mem 0xc7300000-0xc74fffff]
+[    3.647888] pci_bus 0000:1c: resource 2 [mem 0x29a000000-0x29affffff 64bit pref]
+[    3.653237] pci_bus 0000:1d: resource 1 [mem 0xc7500000-0xc76fffff]
+[    3.656825] pci_bus 0000:1d: resource 2 [mem 0x29b000000-0x29bffffff 64bit pref]
+[    3.662196] pci_bus 0000:1e: resource 1 [mem 0xc7700000-0xc78fffff]
+[    3.665791] pci_bus 0000:1e: resource 2 [mem 0x29c000000-0x29cffffff 64bit pref]
+[    3.671149] pci_bus 0000:1f: resource 1 [mem 0xc7900000-0xc7afffff]
+[    3.674784] pci_bus 0000:1f: resource 2 [mem 0x29d000000-0x29dffffff 64bit pref]
+[    3.680131] pci_bus 0000:20: resource 1 [mem 0xc7b00000-0xc7cfffff]
+[    3.683713] pci_bus 0000:20: resource 2 [mem 0x29e000000-0x29effffff 64bit pref]
+[    3.689086] pci_bus 0000:21: resource 1 [mem 0xc7d00000-0xc7efffff]
+[    3.692700] pci_bus 0000:21: resource 2 [mem 0x29f000000-0x29fffffff 64bit pref]
+[    3.698005] pci_bus 0000:22: resource 1 [mem 0xc7f00000-0xc80fffff]
+[    3.701603] pci_bus 0000:22: resource 2 [mem 0x2a0000000-0x2a0ffffff 64bit pref]
+[    3.706952] pci_bus 0000:23: resource 1 [mem 0xc8100000-0xc82fffff]
+[    3.710553] pci_bus 0000:23: resource 2 [mem 0x2a1000000-0x2a1ffffff 64bit pref]
+[    3.715944] pci 0000:27:00.0: BAR 2: assigned [mem 0x2a2000000-0x2a201ffff 64bit pref]
+[    3.721533] pci 0000:27:00.0: BAR 0: assigned [mem 0xc8700000-0xc8701fff]
+[    3.725310] pci 0000:27:00.0: BAR 1: assigned [mem 0xc8702000-0xc8703fff]
+[    3.729068] pci 0000:26:00.0: PCI bridge to [bus 27]
+[    3.732262] pci 0000:26:00.0:   bridge window [mem 0xc8700000-0xc88fffff]
+[    3.736022] pci 0000:26:00.0:   bridge window [mem 0x2a2000000-0x2a2ffffff 64bit pref]
+[    3.741523] pci 0000:26:00.1: PCI bridge to [bus 28]
+[    3.744675] pci 0000:26:00.1:   bridge window [mem 0xc8900000-0xc8afffff]
+[    3.748441] pci 0000:26:00.1:   bridge window [mem 0x2a3000000-0x2a3ffffff 64bit pref]
+[    3.753944] pci 0000:26:00.2: PCI bridge to [bus 29]
+[    3.757108] pci 0000:26:00.2:   bridge window [mem 0xc8b00000-0xc8cfffff]
+[    3.760891] pci 0000:26:00.2:   bridge window [mem 0x2a4000000-0x2a4ffffff 64bit pref]
+[    3.766401] pci 0000:25:00.0: PCI bridge to [bus 26-29]
+[    3.769649] pci 0000:25:00.0:   bridge window [mem 0xc8600000-0xc8cfffff]
+[    3.773453] pci 0000:25:00.0:   bridge window [mem 0x2a2000000-0x2a4ffffff 64bit pref]
+[    3.778995] pci 0000:24:00.0: PCI bridge to [bus 25-29]
+[    3.782261] pci 0000:24:00.0:   bridge window [mem 0xc8500000-0xc8cfffff]
+[    3.786046] pci 0000:24:00.0:   bridge window [mem 0x2a2000000-0x2a4ffffff 64bit pref]
+[    3.791574] pci_bus 0000:24: resource 4 [mem 0xc8400000-0xc8cfffff window]
+[    3.795384] pci_bus 0000:24: resource 5 [mem 0x2a2000000-0x2a4ffffff window]
+[    3.799257] pci_bus 0000:25: resource 1 [mem 0xc8500000-0xc8cfffff]
+[    3.802873] pci_bus 0000:25: resource 2 [mem 0x2a2000000-0x2a4ffffff 64bit pref]
+[    3.808217] pci_bus 0000:26: resource 1 [mem 0xc8600000-0xc8cfffff]
+[    3.811823] pci_bus 0000:26: resource 2 [mem 0x2a2000000-0x2a4ffffff 64bit pref]
+[    3.817140] pci_bus 0000:27: resource 1 [mem 0xc8700000-0xc88fffff]
+[    3.820749] pci_bus 0000:27: resource 2 [mem 0x2a2000000-0x2a2ffffff 64bit pref]
+[    3.826057] pci_bus 0000:28: resource 1 [mem 0xc8900000-0xc8afffff]
+[    3.829659] pci_bus 0000:28: resource 2 [mem 0x2a3000000-0x2a3ffffff 64bit pref]
+[    3.834973] pci_bus 0000:29: resource 1 [mem 0xc8b00000-0xc8cfffff]
+[    3.838585] pci_bus 0000:29: resource 2 [mem 0x2a4000000-0x2a4ffffff 64bit pref]
+[    3.843962] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    3.847782] PCI: CLS 0 bytes, default 64
+[    3.850651] Trying to unpack rootfs image as initramfs...
+[    3.853968] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    3.857644] software IO TLB: mapped [mem 0x00000000bbfe8000-0x00000000bffe8000] (64MB)
+[    3.865411] Freeing initrd memory: 7116K
+[    3.868245] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x257a3a7b45f, max_idle_ns: 440795312762 ns
+[    3.874503] clocksource: Switched to clocksource tsc
+[    3.878043] Initialise system trusted keyrings
+[    3.881054] Key type blacklist registered
+[    3.883978] workingset: timestamp_bits=36 max_order=21 bucket_order=0
+[    3.887660] zbud: loaded
+[    3.890205] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    3.893756] fuse: init (API version 7.38)
+[    3.896725] integrity: Platform Keyring initialized
+[    3.899890] integrity: Machine keyring initialized
+[    3.905550] Key type asymmetric registered
+[    3.908453] Asymmetric key parser 'x509' registered
+[    3.958286] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    3.963677] io scheduler mq-deadline registered
+[    3.967182] pcieport 0000:01:00.0: PME: Signaling with IRQ 24
+[    3.971407] pcieport 0000:03:00.0: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    3.979329] pcieport 0000:03:00.1: pciehp: Slot #1 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    3.987238] pcieport 0000:03:00.2: pciehp: Slot #2 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    3.995138] pcieport 0000:03:00.3: pciehp: Slot #3 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.002951] pcieport 0000:03:00.4: pciehp: Slot #4 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.010833] pcieport 0000:03:00.5: pciehp: Slot #5 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.018672] pcieport 0000:03:00.6: pciehp: Slot #6 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.026528] pcieport 0000:03:00.7: pciehp: Slot #7 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.034374] pcieport 0000:03:01.0: pciehp: Slot #8 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.042226] pcieport 0000:03:01.1: pciehp: Slot #9 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.050066] pcieport 0000:03:01.2: pciehp: Slot #10 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.057977] pcieport 0000:03:01.3: pciehp: Slot #11 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.065917] pcieport 0000:03:01.4: pciehp: Slot #12 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.073823] pcieport 0000:03:01.5: pciehp: Slot #13 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.081709] pcieport 0000:03:01.6: pciehp: Slot #14 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.089601] pcieport 0000:03:01.7: pciehp: Slot #15 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.097546] pcieport 0000:03:02.0: pciehp: Slot #16 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.105406] pcieport 0000:03:02.1: pciehp: Slot #17 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.113306] pcieport 0000:03:02.2: pciehp: Slot #18 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.121163] pcieport 0000:03:02.3: pciehp: Slot #19 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.129048] pcieport 0000:03:02.4: pciehp: Slot #20 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.136960] pcieport 0000:03:02.5: pciehp: Slot #21 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.144879] pcieport 0000:03:02.6: pciehp: Slot #22 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.152798] pcieport 0000:03:02.7: pciehp: Slot #23 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.160682] pcieport 0000:03:03.0: pciehp: Slot #24 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.168550] pcieport 0000:03:03.1: pciehp: Slot #25 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.176473] pcieport 0000:03:03.2: pciehp: Slot #26 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.184359] pcieport 0000:03:03.3: pciehp: Slot #27 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.192284] pcieport 0000:03:03.4: pciehp: Slot #28 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.200160] pcieport 0000:03:03.5: pciehp: Slot #29 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.208021] pcieport 0000:03:03.6: pciehp: Slot #30 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.215910] pcieport 0000:03:03.7: pciehp: Slot #31 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.223896] pcieport 0000:24:00.0: PME: Signaling with IRQ 57
+[    4.227885] pcieport 0000:26:00.0: pciehp: Slot #32 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.235786] pcieport 0000:26:00.1: pciehp: Slot #33 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.243710] pcieport 0000:26:00.2: pciehp: Slot #34 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise- Interlock- NoCompl+ IbPresDis- LLActRep+
+[    4.251490] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    4.255409] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    4.260785] ACPI: button: Power Button [PWRF]
+[    4.263834] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[    4.269208] ACPI: button: Sleep Button [SLPF]
+[    4.272253] ACPI: \_SB_.CP00: Found 2 idle states
+[    4.275655] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    4.305273] 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    4.311309] Linux agpgart interface v0.103
+[    4.315637] loop: module loaded
+[    4.318628] tun: Universal TUN/TAP device driver, 1.6
+[    4.321941] nvme nvme0: pci function 0000:00:04.0
+[    4.325739] PPP generic driver version 2.4.2
+[    4.329731] nvme nvme1: pci function 0000:23:00.0
+[    4.332834] nvme 0000:23:00.0: enabling device (0000 -> 0002)
+[    4.337638] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    4.345578] nvme nvme0: 1/0/0 default/read/poll queues
+[    4.348975] nvme nvme1: 1/0/0 default/read/poll queues
+[    4.352458] i8042: Warning: Keylock active
+[    4.356866] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    4.360078] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    4.363497] mousedev: PS/2 mouse device common for all mice
+[    4.367136] rtc_cmos 00:00: RTC can wake from S4
+[    4.371144] rtc_cmos 00:00: registered as rtc0
+[    4.374160]  nvme0n1: p1 p14 p15
+[    4.376998] rtc_cmos 00:00: setting system clock to 2024-01-06T23:32:40 UTC (1704583960)
+[    4.382727] rtc_cmos 00:00: alarms up to one day, 114 bytes nvram
+[    4.386282] i2c_dev: i2c /dev entries driver
+[    4.389245] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    4.396208] device-mapper: uevent: version 1.0.3
+[    4.399289] device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+[    4.405019] platform eisa.0: Probing EISA bus 0
+[    4.408046] platform eisa.0: EISA: Cannot allocate resource for mainboard
+[    4.411829] platform eisa.0: Cannot allocate resource for EISA slot 1
+[    4.415503] platform eisa.0: Cannot allocate resource for EISA slot 2
+[    4.419151] platform eisa.0: Cannot allocate resource for EISA slot 3
+[    4.422822] platform eisa.0: Cannot allocate resource for EISA slot 4
+[    4.426485] platform eisa.0: Cannot allocate resource for EISA slot 5
+[    4.430141] platform eisa.0: Cannot allocate resource for EISA slot 6
+[    4.433812] platform eisa.0: Cannot allocate resource for EISA slot 7
+[    4.437470] platform eisa.0: Cannot allocate resource for EISA slot 8
+[    4.441121] platform eisa.0: EISA: Detected 0 cards
+[    4.444300] ledtrig-cpu: registered to indicate activity on CPUs
+[    4.448041] drop_monitor: Initializing network drop monitor service
+[    4.463070] NET: Registered PF_INET6 protocol family
+[    4.466791] Segment Routing with IPv6
+[    4.469543] In-situ OAM (IOAM) with IPv6
+[    4.472400] NET: Registered PF_PACKET protocol family
+[    4.475625] Key type dns_resolver registered
+[    4.478767] IPI shorthand broadcast: enabled
+[    4.483587] sched_clock: Marking stable (3868485318, 613231043)->(4694953004, -213236643)
+[    4.489315] registered taskstats version 1
+[    4.492243] Loading compiled-in X.509 certificates
+[    4.495783] Loaded X.509 cert 'Build time autogenerated kernel key: 46b7bc1e0d131edda12c5b945114728cb908e2c8'
+[    4.502378] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+[    4.508899] Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+[    4.515171] blacklist: Loading compiled-in revocation X.509 certificates
+[    4.518948] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+[    4.525141] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+[    4.531558] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+[    4.538075] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+[    4.544453] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+[    4.550924] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+[    4.557431] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+[    4.563877] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+[    4.570669] zswap: loaded using pool lzo/zbud
+[    4.575795] Key type .fscrypt registered
+[    4.578624] Key type fscrypt-provisioning registered
+[    4.581954] Key type encrypted registered
+[    4.584812] AppArmor: AppArmor sha1 policy hashing enabled
+[    4.588174] ima: No TPM chip found, activating TPM-bypass!
+[    4.591537] Loading compiled-in module X.509 certificates
+[    4.595257] Loaded X.509 cert 'Build time autogenerated kernel key: 46b7bc1e0d131edda12c5b945114728cb908e2c8'
+[    4.601461] ima: Allocated hash algorithm: sha1
+[    4.604494] ima: No architecture policies found
+[    4.607550] evm: Initialising EVM extended attributes:
+[    4.610800] evm: security.selinux
+[    4.613417] evm: security.SMACK64
+[    4.616032] evm: security.SMACK64EXEC
+[    4.618782] evm: security.SMACK64TRANSMUTE
+[    4.621657] evm: security.SMACK64MMAP
+[    4.624390] evm: security.apparmor
+[    4.627042] evm: security.ima
+[    4.629528] evm: security.capability
+[    4.632236] evm: HMAC attrs: 0x1
+[    4.681867] PM:   Magic number: 8:338:554
+[    4.684973] RAS: Correctable Errors collector initialized.
+[    4.877804] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[    4.883073] md: Waiting for all devices to be available before autodetect
+[    4.886403] md: If you don't use raid, use raid=noautodetect
+[    4.889675] md: Autodetecting RAID arrays.
+[    4.892258] md: autorun ...
+[    4.894481] md: ... autorun DONE.
+[    4.919230] EXT4-fs (nvme0n1p1): mounted filesystem 9e71e708-e903-4c26-8506-d85b84605ba0 with ordered data mode. Quota mode: none.
+[    4.925219] VFS: Mounted root (ext4 filesystem) readonly on device 259:2.
+[    4.930727] devtmpfs: mounted
+[    4.934707] Freeing unused decrypted memory: 2036K
+[    4.937908] Freeing unused kernel image (initmem) memory: 4856K
+[    4.941245] Write protecting the kernel read-only data: 34816k
+[    4.944577] Freeing unused kernel image (rodata/data gap) memory: 1548K
+[    4.994015] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    4.997261] Run /sbin/init as init process
+[    5.417662] systemd[1]: Inserted module 'autofs4'
+[    5.455930] systemd[1]: systemd 249.11-0ubuntu3.11 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY -P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[    5.471237] systemd[1]: Detected virtualization amazon.
+[    5.474178] systemd[1]: Detected architecture x86-64.
+
+Welcome to [1mUbuntu 22.04.3 LTS[0m!
+
+[    5.495215] systemd[1]: Hostname set to <ubuntu>.
+[    5.500176] systemd[1]: Initializing machine ID from VM UUID.
+[    5.503291] systemd[1]: Installed transient /etc/machine-id file.
+[    6.037532] systemd[1]: Queued start job for default target Graphical Interface.
+[    6.053691] systemd[1]: Created slice Slice /system/modprobe.
+[[0;32m  OK  [0m] Created slice [0;1;39mSlice /system/modprobe[0m.
+[    6.058740] systemd[1]: Created slice Slice /system/serial-getty.
+[[0;32m  OK  [0m] Created slice [0;1;39mSlice /system/serial-getty[0m.
+[    6.063770] systemd[1]: Created slice Slice /system/systemd-fsck.
+[[0;32m  OK  [0m] Created slice [0;1;39mSlice /system/systemd-fsck[0m.
+[    6.068795] systemd[1]: Created slice User and Session Slice.
+[[0;32m  OK  [0m] Created slice [0;1;39mUser and Session Slice[0m.
+[    6.073546] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Started [0;1;39mForward Password R…uests to Wall Directory Watch[0m.
+[    6.080742] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[[0;32m  OK  [0m] Set up automount [0;1;39mArbitrary…s File System Automount Point[0m.
+[    6.088245] systemd[1]: Reached target Slice Units.
+[[0;32m  OK  [0m] Reached target [0;1;39mSlice Units[0m.
+[    6.092546] systemd[1]: Reached target Mounting snaps.
+[[0;32m  OK  [0m] Reached target [0;1;39mMounting snaps[0m.
+[    6.096928] systemd[1]: Reached target Swaps.
+[[0;32m  OK  [0m] Reached target [0;1;39mSwaps[0m.
+[    6.100967] systemd[1]: Reached target System Time Set.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Time Set[0m.
+[    6.105449] systemd[1]: Reached target Local Verity Protected Volumes.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal Verity Protected Volumes[0m.
+[    6.110584] systemd[1]: Listening on Device-mapper event daemon FIFOs.
+[[0;32m  OK  [0m] Listening on [0;1;39mDevice-mapper event daemon FIFOs[0m.
+[    6.115773] systemd[1]: Listening on LVM2 poll daemon socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mLVM2 poll daemon socket[0m.
+[    6.120523] systemd[1]: Listening on multipathd control socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mmultipathd control socket[0m.
+[    6.125356] systemd[1]: Listening on Syslog Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mSyslog Socket[0m.
+[    6.129662] systemd[1]: Listening on fsck to fsckd communication Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mfsck to fsckd communication Socket[0m.
+[    6.134905] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[[0;32m  OK  [0m] Listening on [0;1;39minitctl Compatibility Named Pipe[0m.
+[    6.140154] systemd[1]: Listening on Journal Audit Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Audit Socket[0m.
+[    6.144867] systemd[1]: Listening on Journal Socket (/dev/log).
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket (/dev/log)[0m.
+[    6.149833] systemd[1]: Listening on Journal Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket[0m.
+[    6.154194] systemd[1]: Listening on Network Service Netlink Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mNetwork Service Netlink Socket[0m.
+[    6.159368] systemd[1]: Listening on udev Control Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mudev Control Socket[0m.
+[    6.163964] systemd[1]: Listening on udev Kernel Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mudev Kernel Socket[0m.
+[    6.173306] systemd[1]: Mounting Huge Pages File System...
+         Mounting [0;1;39mHuge Pages File System[0m...
+[    6.178645] systemd[1]: Mounting POSIX Message Queue File System...
+         Mounting [0;1;39mPOSIX Message Queue File System[0m...
+[    6.184600] systemd[1]: Mounting Kernel Debug File System...
+         Mounting [0;1;39mKernel Debug File System[0m...
+[    6.190250] systemd[1]: Mounting Kernel Trace File System...
+         Mounting [0;1;39mKernel Trace File System[0m...
+[    6.196934] systemd[1]: Starting Journal Service...
+         Starting [0;1;39mJournal Service[0m...
+[    6.230131] systemd[1]: Starting Set the console keyboard layout...
+         Starting [0;1;39mSet the console keyboard layout[0m...
+[    6.245382] systemd[1]: Starting Create List of Static Device Nodes...
+         Starting [0;1;39mCreate List of Static Device Nodes[0m...
+[    6.265344] systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+         Starting [0;1;39mMonitoring of LVM…meventd or progress polling[0m...
+[    6.284451] systemd[1]: Condition check resulted in LXD - agent being skipped.
+[    6.313405] systemd[1]: Starting Load Kernel Module configfs...
+         Starting [0;1;39mLoad Kernel Module configfs[0m...
+[    6.322012] systemd[1]: Starting Load Kernel Module drm...
+         Starting [0;1;39mLoad Kernel Module drm[0m...
+[    6.343994] systemd[1]: Starting Load Kernel Module efi_pstore...
+         Starting [0;1;39mLoad Kernel Module efi_pstore[0m...
+[    6.359453] systemd[1]: Starting Load Kernel Module fuse...
+         Starting [0;1;39mLoad Kernel Module fuse[0m...
+[    6.368321] systemd[1]: Condition check resulted in OpenVSwitch configuration for cleanup being skipped.
+[    6.389404] systemd[1]: Starting File System Check on Root Device...
+         Starting [0;1;39mFile System Check on Root Device[0m...
+[    6.399304] systemd[1]: Starting Load Kernel Modules...
+         Starting [0;1;39mLoad Kernel Modules[0m...
+[    6.425605] systemd[1]: Starting Coldplug All udev Devices...
+         Starting [0;1;39mColdplug All udev Devices[0m...
+[    6.442897] ACPI: bus type drm_connector registered
+[    6.450812] systemd[1]: Started Journal Service.
+[[0;32m  OK  [0m] Started [0;1;39mJournal Service[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mHuge Pages File System[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mPOSIX Message Queue File System[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Debug File System[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Trace File System[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mSet the console keyboard layout[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mCreate List of Static Device Nodes[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module configfs[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module drm[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module efi_pstore[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module fuse[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Modules[0m.
+         Mounting [0;1;39mFUSE Control File System[0m...
+         Mounting [0;1;39mKernel Configuration File System[0m...
+[[0;32m  OK  [0m] Started [0;1;39mFile System Check Daemon to report status[0m.
+         Starting [0;1;39mApply Kernel Variables[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mFile System Check on Root Device[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mFUSE Control File System[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Configuration File System[0m.
+         Starting [0;1;39mRemount Root and Kernel File Systems[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mApply Kernel Variables[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mRemount Root and Kernel File Systems[0m.
+         Starting [0;1;39mDevice-Mapper Multipath Device Controller[0m...
+         Starting [0;1;39mFlush Journal to Persistent Storage[0m...
+         Starting [0;1;39mLoad/Save Random Seed[0m...
+         Starting [0;1;39mCreate System Users[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mColdplug All udev Devices[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad/Save Random Seed[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mFlush Journal to Persistent Storage[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mCreate System Users[0m.
+         Starting [0;1;39mCreate Static Device Nodes in /dev[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mCreate Static Device Nodes in /dev[0m.
+         Starting [0;1;39mRule-based Manage…for Device Events and Files[0m...
+[[0;32m  OK  [0m] Started [0;1;39mDevice-Mapper Multipath Device Controller[0m.
+[[0;32m  OK  [0m] Started [0;1;39mRule-based Manager for Device Events and Files[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDispatch Password …ts to Console Directory Watch[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal Encrypted Volumes[0m.
+[[0;32m  OK  [0m] Found device [0;1;39m/dev/ttyS0[0m.
+[[0;32m  OK  [0m] Listening on [0;1;39mLoad/Save RF …itch Status /dev/rfkill Watch[0m.
+[[0;32m  OK  [0m] Found device [0;1;39mAmazon Elastic Block Store UEFI[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mMonitoring of LVM… dmeventd or progress polling[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mPreparation for Local File Systems[0m.
+         Mounting [0;1;39mMount unit for am…on-ssm-agent, revision 7628[0m...
+         Mounting [0;1;39mMount unit for core18, revision 2812[0m...
+         Mounting [0;1;39mMount unit for core20, revision 2015[0m...
+         Mounting [0;1;39mMount unit for lxd, revision 24322[0m...
+         Mounting [0;1;39mMount unit for snapd, revision 20290[0m...
+         Starting [0;1;39mFile System Check on /dev/disk/by-label/UEFI[0m...
+[[0;32m  OK  [0m] Mounted [0;1;39mMount unit for lxd, revision 24322[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mMount unit for core18, revision 2812[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mMount unit for snapd, revision 20290[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mMount unit for amazon-ssm-agent, revision 7628[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mMount unit for core20, revision 2015[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mMounted snaps[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mFile System Check on /dev/disk/by-label/UEFI[0m.
+         Mounting [0;1;39m/boot/efi[0m...
+[[0;32m  OK  [0m] Mounted [0;1;39m/boot/efi[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal File Systems[0m.
+         Starting [0;1;39mLoad AppArmor profiles[0m...
+         Starting [0;1;39mSet console font and keymap[0m...
+         Starting [0;1;39mCreate final runt…dir for shutdown pivot root[0m...
+         Starting [0;1;39mTell Plymouth To Write Out Runtime Data[0m...
+         Starting [0;1;39mSet Up Additional Binary Formats[0m...
+         Starting [0;1;39mCommit a transient machine-id on disk[0m...
+         Starting [0;1;39mCreate Volatile Files and Directories[0m...
+         Starting [0;1;39mUncomplicated firewall[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mSet console font and keymap[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mCreate final runt…e dir for shutdown pivot root[0m.
+         Mounting [0;1;39mArbitrary Executable File Formats File System[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mUncomplicated firewall[0m.
+[[0;32m  OK  [0m] Mounted [0;1;39mArbitrary Executable File Formats File System[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mTell Plymouth To Write Out Runtime Data[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mSet Up Additional Binary Formats[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mCreate Volatile Files and Directories[0m.
+         Starting [0;1;39mRecord System Boot/Shutdown in UTMP[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mRecord System Boot/Shutdown in UTMP[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mCommit a transient machine-id on disk[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad AppArmor profiles[0m.
+         Starting [0;1;39mLoad AppArmor pro…managed internally by snapd[0m...
+         Starting [0;1;39mInitial cloud-init job (pre-networking)[0m...
+[    8.853471] cloud-init[319]: Cloud-init v. 23.3.3-0ubuntu0~22.04.1 running 'init-local' at Sat, 06 Jan 2024 23:32:45 +0000. Up 8.81 seconds.
+[[0;32m  OK  [0m] Finished [0;1;39mInitial cloud-init job (pre-networking)[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mPreparation for Network[0m.
+         Starting [0;1;39mNetwork Configuration[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mLoad AppArmor pro…s managed internally by snapd[0m.
+[[0;32m  OK  [0m] Started [0;1;39mNetwork Configuration[0m.
+         Starting [0;1;39mWait for Network to be Configured[0m...
+         Starting [0;1;39mNetwork Name Resolution[0m...
+[[0;32m  OK  [0m] Started [0;1;39mNetwork Name Resolution[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mNetwork[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mHost and Network Name Lookups[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mWait for Network to be Configured[0m.
+         Starting [0;1;39mInitial cloud-ini… (metadata service crawler)[0m...
+[   11.648511] cloud-init[368]: Cloud-init v. 23.3.3-0ubuntu0~22.04.1 running 'init' at Sat, 06 Jan 2024 23:32:48 +0000. Up 11.63 seconds.
+[   11.656072] cloud-init[368]: ci-info: +++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
+[   11.660112] cloud-init[368]: ci-info: +---------+------+-----------------------------+---------------+--------+-------------------+
+[   11.668085] cloud-init[368]: ci-info: |  Device |  Up  |           Address           |      Mask     | Scope  |     Hw-Address    |
+[   11.672059] cloud-init[368]: ci-info: +---------+------+-----------------------------+---------------+--------+-------------------+
+[   11.680072] cloud-init[368]: ci-info: | enp39s0 | True |        172.31.40.219        | 255.255.240.0 | global | 0e:c5:bf:e5:bc:c3 |
+[   11.683881] cloud-init[368]: ci-info: | enp39s0 | True | fe80::cc5:bfff:fee5:bcc3/64 |       .       |  link  | 0e:c5:bf:e5:bc:c3 |
+[   11.692230] cloud-init[368]: ci-info: |    lo   | True |          127.0.0.1          |   255.0.0.0   |  host  |         .         |
+[   11.696058] cloud-init[368]: ci-info: |    lo   | True |           ::1/128           |       .       |  host  |         .         |
+[   11.704070] cloud-init[368]: ci-info: +---------+------+-----------------------------+---------------+--------+-------------------+
+[   11.708062] cloud-init[368]: ci-info: ++++++++++++++++++++++++++++++Route IPv4 info++++++++++++++++++++++++++++++
+[   11.714379] cloud-init[368]: ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+[   11.718223] cloud-init[368]: ci-info: | Route | Destination |   Gateway   |     Genmask     | Interface | Flags |
+[   11.728063] cloud-init[368]: ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+[   11.730743] cloud-init[368]: ci-info: |   0   |   0.0.0.0   | 172.31.32.1 |     0.0.0.0     |  enp39s0  |   UG  |
+[   11.736221] cloud-init[368]: ci-info: |   1   |  172.31.0.2 | 172.31.32.1 | 255.255.255.255 |  enp39s0  |  UGH  |
+[   11.744069] cloud-init[368]: ci-info: |   2   | 172.31.32.0 |   0.0.0.0   |  255.255.240.0  |  enp39s0  |   U   |
+[   11.746741] cloud-init[368]: ci-info: |   3   | 172.31.32.1 |   0.0.0.0   | 255.255.255.255 |  enp39s0  |   UH  |
+[   11.752106] cloud-init[368]: ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+[   11.756610] cloud-init[368]: ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+[   11.759964] cloud-init[368]: ci-info: +-------+-------------+---------+-----------+-------+
+[   11.764354] cloud-init[368]: ci-info: | Route | Destination | Gateway | Interface | Flags |
+[   11.769159] cloud-init[368]: ci-info: +-------+-------------+---------+-----------+-------+
+[   11.772486] cloud-init[368]: ci-info: |   1   |  fe80::/64  |    ::   |  enp39s0  |   U   |
+[   11.778004] cloud-init[368]: ci-info: |   3   |    local    |    ::   |  enp39s0  |   U   |
+[   11.782418] cloud-init[368]: ci-info: |   4   |  multicast  |    ::   |  enp39s0  |   U   |
+[   11.787303] cloud-init[368]: ci-info: +-------+-------------+---------+-----------+-------+
+[   13.037998] cloud-init[368]: Generating public/private rsa key pair.
+[   13.039791] cloud-init[368]: Your identification has been saved in /etc/ssh/ssh_host_rsa_key
+[   13.042090] cloud-init[368]: Your public key has been saved in /etc/ssh/ssh_host_rsa_key.pub
+[   13.048106] cloud-init[368]: The key fingerprint is:
+[   13.049455] cloud-init[368]: SHA256:sr2JlAldvxyitIfH8G1i4WtqcIPY6byCuSsntFQqkaU root@ip-172-31-40-219
+[   13.056078] cloud-init[368]: The key's randomart image is:
+[   13.057536] cloud-init[368]: +---[RSA 3072]----+
+[   13.058832] cloud-init[368]: |                 |
+[   13.064742] cloud-init[368]: |  .              |
+[   13.066069] cloud-init[368]: | +      .        |
+[   13.067338] cloud-init[368]: |E  . . . .       |
+[   13.070374] cloud-init[368]: | .oo.o= S o      |
+[   13.071719] cloud-init[368]: |.+. =oo# = o     |
+[   13.076221] cloud-init[368]: |+o.o oO.X =      |
+[   13.077562] cloud-init[368]: |=.o o..=.*       |
+[   13.080057] cloud-init[368]: |+= ..ooo+        |
+[   13.082976] cloud-init[368]: +----[SHA256]-----+
+[   13.086264] cloud-init[368]: Generating public/private dsa key pair.
+[   13.088607] cloud-init[368]: Your identification has been saved in /etc/ssh/ssh_host_dsa_key
+[   13.096263] cloud-init[368]: Your public key has been saved in /etc/ssh/ssh_host_dsa_key.pub
+[   13.098458] cloud-init[368]: The key fingerprint is:
+[   13.101448] cloud-init[368]: SHA256:WL7d/UBAwqO7xbBb+o0qjEO7CRkJwYhtAu9Qd7AlHT4 root@ip-172-31-40-219
+[[0;32m  OK  [0m] Finished [0;1;39mInitial cloud-ini…ob (metadata service crawler)[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mCloud-config availability[0m.
+[   13.108516] cloud-init[368]: The key's randomart image is:
+[   13.110026] cloud-init[368]: +---[DSA 1024]----+
+[   13.111237] cloud-init[368]: |B.. +o+. .. .    |
+[[0;32m  OK  [0m] Reached target [0;1;39mNetwork is Online[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Initialization[0m.
+[   13.116083] cloud-init[368]: |+=o. *.   oo     |
+[   13.117456] cloud-init[368]: |oo. . E .. ..    |
+[[0;32m  OK  [0m] Started [0;1;39mACPI Events Check[0m.
+[   13.120785] cloud-init[368]: | + .   =o    .   |
+[[0;32m  OK  [0m] Started [0;1;39mDaily Cleanup of Temporary Directories[0m.
+[   13.123989] cloud-init[368]: |  +   . S=    .  |
+[   13.125401] cloud-init[368]: |   o.   oo+. o   |
+[[0;32m  OK  [0m] Started [0;1;39mDownload data for …ailed at package install time[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mPath Units[0m.
+[   13.128740] cloud-init[368]: |  o. +  .*. . o  |
+[   13.131703] cloud-init[368]: |   .+.o +  o   o |
+[[0;32m  OK  [0m] Listening on [0;1;39mACPID Listen Socket[0m.
+[[0;32m  OK  [0m] Listening on [0;1;39mcloud-init hotplug hook socket[0m.
+[   13.136568] cloud-init[368]: |    oo ..oo .   .|
+[   13.137902] cloud-init[368]: +----[SHA256]-----+
+[   13.139186] cloud-init[368]: Generating public/private ecdsa key pair.
+[[0;32m  OK  [0m] Listening on [0;1;39mD-Bus System Message Bus Socket[0m.
+[   13.148330] cloud-init[368]: Your identification has been saved in /etc/ssh/ssh_host_ecdsa_key
+[   13.150531] cloud-init[368]: Your public key has been saved in /etc/ssh/ssh_host_ecdsa_key.pub
+[[0;32m  OK  [0m] Listening on [0;1;39mOpen-iSCSI iscsid Socket[0m.
+         Starting [0;1;39mSocket activation for snappy daemon[0m...
+[[0;32m  OK  [0m] Listening on [0;1;39mUUID daemon activation socket[0m.
+[   13.156932] cloud-init[368]: The key fingerprint is:
+[   13.160756] cloud-init[368]: SHA256:oQO8Dokvc+PTJ2JhreG+eQsjtRsOkxZ/fAHkJR8IxQw root@ip-172-31-40-219
+[[0;32m  OK  [0m] Reached target [0;1;39mPreparation for Remote File Systems[0m.
+[   13.165066] cloud-init[368]: The key's randomart image is:
+[   13.166927] cloud-init[368]: +---[ECDSA 256]---+
+[[0;32m  OK  [0m] Reached target [0;1;39mRemote File Systems[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mAvailability of block devices[0m.
+[[0;32m  OK  [0m] Listening on [0;1;39mSocket activation for snappy daemon[0m.
+[   13.173721] cloud-init[368]: |   E*+.o         |
+[   13.175128] cloud-init[368]: |   .o++ .        |
+[   13.176347] cloud-init[368]: |    oo ..        |
+[[0;32m  OK  [0m] Reached target [0;1;39mSocket Units[0m.
+[   13.179248] cloud-init[368]: | . . o.. .       |
+[   13.180609] cloud-init[368]: |..+.. o.S        |
+[   13.181814] cloud-init[368]: | +*+o  ..        |
+[   13.183095] cloud-init[368]: |B+O*.o .         |
+[[0;32m  OK  [0m] Reached target [0;1;39mBasic System[0m.
+[   13.186424] cloud-init[368]: |.X*B= o          |
+[   13.188336] cloud-init[368]: | oB=.+           |
+[   13.189673] cloud-init[368]: +----[SHA256]-----+
+[   13.190970] cloud-init[368]: Generating public/private ed25519 key pair.
+[[0;32m  OK  [0m] Started [0;1;39mACPI event daemon[0m.
+         Starting [0;1;39mLSB: automatic crash report generation[0m...
+[   13.199450] cloud-init[368]: Your identification has been saved in /etc/ssh/ssh_host_ed25519_key
+[   13.202966] cloud-init[368]: Your public key has been saved in /etc/ssh/ssh_host_ed25519_key.pub
+         Starting [0;1;39mchrony, an NTP client/server[0m...
+[   13.207860] cloud-init[368]: The key fingerprint is:
+[   13.218961] cloud-init[368]: SHA256:5x42ASHteYK8CXuS0BEDCV4DR73/vT2nyrHawzDpogE root@ip-172-31-40-219
+[[0;32m  OK  [0m] Started [0;1;39mRegular background program processing daemon[0m.
+[   13.231145] cloud-init[368]: The key's randomart image is:
+[   13.232616] cloud-init[368]: +--[ED25519 256]--+
+[   13.233923] cloud-init[368]: |.o+B+....        |
+[[0;32m  OK  [0m] Started [0;1;39mD-Bus System Message Bus[0m.
+[[0;32m  OK  [0m] Started [0;1;39mSave initial kernel messages after boot[0m.
+[   13.241490] cloud-init[368]: |. + oo ...       |
+[   13.249612] cloud-init[368]: | . . o.o..       |
+[   13.250885] cloud-init[368]: |  . o.o +..      |
+[   13.253394] cloud-init[368]: |   E +.oSo+      |
+[   13.256072] cloud-init[368]: |    = +. * .     |
+[   13.260057] cloud-init[368]: |     +  o X.     |
+[   13.261884] cloud-init[368]: |      .. =o*+. . |
+         Starting [0;1;39mRemove Stale Onli…t4 Metadata Check Snapshots[0m...
+         Starting [0;1;39mEC2 Instance Connect Host Key Harvesting[0m...
+[   13.272917] cloud-init[368]: |     .. ..o*+o+  |
+[   13.283075] cloud-init[368]: +----[SHA256]-----+
+         Starting [0;1;39mRecord successful boot for GRUB[0m...
+[[0;32m  OK  [0m] Started [0;1;39mirqbalance daemon[0m.
+         Starting [0;1;39mDispatcher daemon for systemd-networkd[0m...
+         Starting [0;1;39mPollinate to seed…udo random number generator[0m...
+         Starting [0;1;39mSystem Logging Service[0m...
+[[0;32m  OK  [0m] Started [0;1;39mUserspace listener for prompt events[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mPreparation for Logins[0m.
+         Starting [0;1;39mSnap Daemon[0m...
+         Starting [0;1;39mUser Login Management[0m...
+         Starting [0;1;39mPermit User Sessions[0m...
+[[0;32m  OK  [0m] Started [0;1;39mchrony, an NTP client/server[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mPermit User Sessions[0m.
+[[0;32m  OK  [0m] Started [0;1;39mSystem Logging Service[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mRecord successful boot for GRUB[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Time Synchronized[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily apt download activities[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily apt upgrade and clean activities[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily dpkg database backup timer[0m.
+[[0;32m  OK  [0m] Started [0;1;39mPeriodic ext4 Onli…ata Check for All Filesystems[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDiscard unused blocks once a week[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily rotation of log files[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily man-db regeneration[0m.
+[[0;32m  OK  [0m] Started [0;1;39mMessage of the Day[0m.
+[[0;32m  OK  [0m] Started [0;1;39mCheck to see wheth…w version of Ubuntu available[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mTimer Units[0m.
+         Starting [0;1;39mGRUB failed boot detection[0m...
+         Starting [0;1;39mHold until boot process finishes up[0m...
+         Starting [0;1;39mTerminate Plymouth Boot Screen[0m...
+         Starting [0;1;39mHostname Service[0m...
+[[0;32m  OK  [0m] Started [0;1;39mLSB: automatic crash report generation[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mHold until boot process finishes up[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDispatcher daemon for systemd-networkd[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mTerminate Plymouth Boot Screen[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mGRUB failed boot detection[0m.
+[[0;32m  OK  [0m] Started [0;1;39mUser Login Management[0m.
+[[0;32m  OK  [0m] Started [0;1;39mSerial Getty on ttyS0[0m.
+         Starting [0;1;39mSet console scheme[0m...
+[[0;32m  OK  [0m] Started [0;1;39mUnattended Upgrades Shutdown[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mSet console scheme[0m.
+[[0;32m  OK  [0m] Created slice [0;1;39mSlice /system/getty[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty1[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLogin Prompts[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mRemove Stale Onli…ext4 Metadata Check Snapshots[0m.
+[[0;32m  OK  [0m] Started [0;1;39mHostname Service[0m.
+         Starting [0;1;39mAuthorization Manager[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mPollinate to seed…seudo random number generator[0m.
+[[0;32m  OK  [0m] Started [0;1;39mAuthorization Manager[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mEC2 Instance Connect Host Key Harvesting[0m.
+         Starting [0;1;39mOpenBSD Secure Shell server[0m...
+[[0;32m  OK  [0m] Started [0;1;39mOpenBSD Secure Shell server[0m.
+[[0;32m  OK  [0m] Started [0;1;39mSnap Daemon[0m.
+         Starting [0;1;39mWait until snapd is fully seeded[0m...
+[[0;32m  OK  [0m] Started [0;1;39msnap.lxd.hook.inst…-4959-9fda-64bc93dd4062.scope[0m.
+[[0;32m  OK  [0m] Listening on [0;1;39mSocket unix for snap application lxd.daemon[0m.
+[[0;32m  OK  [0m] Listening on [0;1;39mSocket unix f…p application lxd.user-daemon[0m.
+         Starting [0;1;39mService for snap application lxd.activate[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mService for snap application lxd.activate[0m.
+[[0;32m  OK  [0m] Started [0;1;39msnap.lxd.hook.conf…-460f-91bf-cdca70bab2a7.scope[0m.
+[[0;32m  OK  [0m] Started [0;1;39mService for snap a…on-ssm-agent.amazon-ssm-agent[0m.
+         Starting [0;1;39mTime & Date Service[0m...
+[[0;32m  OK  [0m] Started [0;1;39mTime & Date Service[0m.
+[   19.295418] cloud-init[1158]: Cloud-init v. 23.3.3-0ubuntu0~22.04.1 running 'modules:config' at Sat, 06 Jan 2024 23:32:55 +0000. Up 19.26 seconds.
+
+Ubuntu 22.04.3 LTS ip-172-31-40-219 ttyS0
+
+ip-172-31-40-219 login: [   20.047141] cloud-init[1175]: Cloud-init v. 23.3.3-0ubuntu0~22.04.1 running 'modules:final' at Sat, 06 Jan 2024 23:32:56 +0000. Up 20.01 seconds.
+ci-info: ++++++++++++++++++++++++++++++++++++Authorized keys from /home/ubuntu/.ssh/authorized_keys for user ubuntu++++++++++++++++++++++++++++++++++++
+ci-info: +---------+-------------------------------------------------------------------------------------------------+---------+----------------------+
+ci-info: | Keytype |                                       Fingerprint (sha256)                                      | Options |       Comment        |
+ci-info: +---------+-------------------------------------------------------------------------------------------------+---------+----------------------+
+ci-info: | ssh-rsa | f0:fb:07:2c:10:c9:22:58:cf:a8:c9:db:db:00:67:06:69:7d:f0:3a:e6:3d:2a:f5:51:64:50:b4:d4:e3:be:ab |    -    | Minecraft Server Key |
+ci-info: +---------+-------------------------------------------------------------------------------------------------+---------+----------------------+
+<14>Jan  6 23:32:56 cloud-init: #############################################################
+<14>Jan  6 23:32:56 cloud-init: -----BEGIN SSH HOST KEY FINGERPRINTS-----
+<14>Jan  6 23:32:56 cloud-init: 1024 SHA256:WL7d/UBAwqO7xbBb+o0qjEO7CRkJwYhtAu9Qd7AlHT4 root@ip-172-31-40-219 (DSA)
+<14>Jan  6 23:32:56 cloud-init: 256 SHA256:oQO8Dokvc+PTJ2JhreG+eQsjtRsOkxZ/fAHkJR8IxQw root@ip-172-31-40-219 (ECDSA)
+<14>Jan  6 23:32:56 cloud-init: 256 SHA256:5x42ASHteYK8CXuS0BEDCV4DR73/vT2nyrHawzDpogE root@ip-172-31-40-219 (ED25519)
+<14>Jan  6 23:32:56 cloud-init: 3072 SHA256:sr2JlAldvxyitIfH8G1i4WtqcIPY6byCuSsntFQqkaU root@ip-172-31-40-219 (RSA)
+<14>Jan  6 23:32:56 cloud-init: -----END SSH HOST KEY FINGERPRINTS-----
+<14>Jan  6 23:32:56 cloud-init: #############################################################
+-----BEGIN SSH HOST KEY KEYS-----
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHTBTiRPaY7i8tfAqNDIpqK+27aZCf2wpFXDVJ/PjdtELpXja2a+7GZEaf0B4L896cGoy95VQ/6cKLDiLIVDt+g= root@ip-172-31-40-219
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJFnFvx4uXw09x2a3Ouu9gFH+5gN+vSxId2L1LjeRKkV root@ip-172-31-40-219
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDUSc1RGfS/Q49hRQec4a5wYSOiFKnWKPMnWsvtByp+0Kp9T8AZ/lxlyaEXGwmfAVL2+PRYhKZX/R9xmKgpq+tVfEmXs9F8LbL6pvfJhLy2WmBPqAVmw95rGSAQJ64iLjSVamitMhsb0G3x5w5dHLvcwdnurO9vJ1HLKOrTvWfygPJe+P7YgGkk7ZeJe5IczNy2DOpDwtjpoxntjZ9JVHCeJJYCCTOt2E94Eq4HOCvUoShYzqeCFNlX1G6nv9R6WM/SUdQrNhVdMyGoTjr8R6Gbx7ujhTVZx66tKNcw1wt+g2VEjvA0p04tlsFDpSbA9zGV1iQS4fCQeMHsidVBbt5tUVWqttFMRxx3vK6w2CqXixiiOiBWAhpZW+u3oA/veycS25wMoXQrgsKIQqEtj4wUYiKu53gRDjsSEaL4na+tz8L5wXTFhWIfvlI16/SDIbe1VUU6bm1lRTCM7rlXNMFW6p4sWGSzK0jjwxg0tbtqRzWGsTLFpvd6BXZA4hoB1Ws= root@ip-172-31-40-219
+-----END SSH HOST KEY KEYS-----
+[   20.209650] cloud-init[1175]: Cloud-init v. 23.3.3-0ubuntu0~22.04.1 finished at Sat, 06 Jan 2024 23:32:56 +0000. Datasource DataSourceEc2Local.  Up 20.20 seconds
+
