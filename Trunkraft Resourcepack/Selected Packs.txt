@@ -1,0 +1,14 @@
+Vanilla Tweaks Resource Pack
+Version: 1.21
+Packs:
+	ItemStitchingFix
+	DripleafFixBig
+	SmileyAxolotls
+	PingColorIndicator
+	QuieterThunder
+	VariatedGrass
+	RandomMossRotation
+	VariatedEndStone
+	VariatedStone
+	VariatedUnpolishedStones
+	RandomSunflowerRotation
