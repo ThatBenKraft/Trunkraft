@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import server_ssh
+from server_ssh import SCP
 
 # Creates paths
 BASE_PATH = Path(__file__).parent
@@ -9,5 +9,9 @@ EC2_PATH = "/home/ubuntu/scp_testing/"
 
 
 if __name__ == "__main__":
+    # Creates SCP client
+    scp_client = SCP()
     # Uploads setup files to EC2 path
-    server_ssh.upload(SETUP_PATH, EC2_PATH, empty_contents=True)
+    scp_client.upload(SETUP_PATH, EC2_PATH, empty_contents=True)
+    # Closes SCP connection
+    scp_client.close()

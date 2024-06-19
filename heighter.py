@@ -2,7 +2,7 @@ from pathlib import Path
 
 import openpyxl
 
-import server_ssh
+from server_ssh import SCP
 
 # Defines base player height
 BASE_HEIGHT_M = 1.8
@@ -60,7 +60,11 @@ def update_heights() -> None:
 
 
 if __name__ == "__main__":
-    # Runs main script actions
+    # Updates function file from spreadsheet
     update_heights()
-
-    server_ssh.upload(LOCAL_DATAPACK_PATH, EC2_DATAPACK_PATH)
+    # Creates SCP client
+    scp_client = SCP()
+    # Uploads datapack to server
+    scp_client.upload(LOCAL_DATAPACK_PATH, EC2_DATAPACK_PATH)
+    # Closes SCP connection
+    scp_client.close()

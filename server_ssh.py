@@ -14,83 +14,88 @@ with open("ec2_server.txt", "r") as file:
 # Defines login credentials
 DEFAULT_PORT = 22
 DEFAULT_USER = "ubuntu"
-DEFAULT_KEY_PATH = Path("C:/Users/Ben/.ssh/ubuntu_login.pem")
+# Finds key from file
+BASE_PATH = Path(__file__).parent
+DEFAULT_KEY_PATH = BASE_PATH / "ubuntu_login.pem"
 
 
-def create_ssh_client(
-    server=DEFAULT_SERVER,
-    port=DEFAULT_PORT,
-    user=DEFAULT_USER,
-    key_path=DEFAULT_KEY_PATH,
-) -> paramiko.SSHClient:
+class SCP:
     """
-    Creates ssh client from credentials.
+    Class allowing SCP file transfers.
     """
-    key = paramiko.RSAKey.from_private_key_file(key_path)
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    print("\nConnecting...")
-    client.connect(server, port, user, pkey=key)
-    print("Connected.\n")
-    return client
 
+    def __init__(
+        self,
+        server: str = DEFAULT_SERVER,
+        port: int = DEFAULT_PORT,
+        user: str = DEFAULT_USER,
+        key_path: Path = DEFAULT_KEY_PATH,
+    ) -> None:
+        """
+        Class allowing SCP file transfers.
+        """
+        try:
+            key = paramiko.RSAKey.from_private_key_file(str(key_path))
+            ssh_client = paramiko.SSHClient()
+            ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            print("\nConnecting to EC2...")
+            ssh_client.connect(server, port, user, pkey=key)
+            print("Connected.\n")
+            self.client = SCPClient(ssh_client.get_transport())  # type: ignore
+        except Exception as error:
+            # Prints errors
+            print("Error:", str(error))
 
-def create_scp_client(
-    server=DEFAULT_SERVER,
-    port=DEFAULT_PORT,
-    user=DEFAULT_USER,
-    key_path=DEFAULT_KEY_PATH,
-) -> SCPClient:
-    """
-    Creates scp client from credentials.
-    """
-    # Creates ssh client
-    ssh = create_ssh_client(server, port, user, key_path)
-    # Converts to scp client
-    return SCPClient(ssh.get_transport())
-
-
-def upload(local_path: Path, remote_path: str, empty_contents=False) -> None:
-    """
-    Uploads item/s to EC2 server.
-    """
-    try:
-        # Creates SCP client
-        scp = create_scp_client()
-        print("Uploading:")
-        # If directory contents are to be emptied:
-        if local_path.is_dir() and empty_contents:
-            # For each item in directory:
-            for item_path in local_path.iterdir():
+    def upload(
+        self, local_path: Path, remote_path: str, empty_contents: bool = False
+    ) -> None:
+        """
+        Uploads item/s to the EC2 server.
+        """
+        try:
+            print("Uploading:")
+            # If directory contents are to be emptied:
+            if local_path.is_dir() and empty_contents:
+                # For each item in directory:
+                for item_path in local_path.iterdir():
+                    # List and upload item
+                    print(f"[ {item_path.name} ]")
+                    self.client.put(item_path, remote_path, recursive=True)
+            else:
                 # List and upload item
-                print(f"[ {item_path.name} ]")
-                scp.put(item_path, remote_path, recursive=True)
-        else:
-            # List and upload item
-            print(f"[ {local_path.name} ]")
-            scp.put(local_path, remote_path, recursive=True)
-    except Exception as e:
-        # Prints errors
-        print("Error:", str(e))
-    finally:
-        # Closes SCP connection
-        scp.close()
-        print("Finished transfer.")
+                print(f"[ {local_path.name} ]")
+                self.client.put(local_path, remote_path, recursive=True)
+        except Exception as error:
+            # Prints errors
+            print("Error:", str(error))
+        finally:
+            # Closes SCP connection
+            print("Finished transfer.")
 
+    def download(self, remote_path: str, local_path: Path) -> None:
+        """
+        Downloads item/s from EC2 server.
+        """
+        try:
+            print(f"Backing up: {remote_path}. . .")
+            # Downloads item from server
+            self.client.get(remote_path, local_path, recursive=True)  # type: ignore
+        except Exception as error:
+            # Prints errors
+            print("Error:", str(error))
+        finally:
+            # Closes SSH connection
+            print("Finished transfer.")
 
-def download(remote_path: str, local_path: Path) -> None:
-    """
-    Downloads item/s from EC2 server.
-    """
-    try:
-        # Creates SCP client
-        scp = create_scp_client()
-        print(f"Backing up: {remote_path}. . .")
-        scp.get(remote_path, local_path, recursive=True)
-    except Exception as e:
-        # Prints errors
-        print("Error:", str(e))
-    finally:
-        # Closes SSH connection
-        scp.close()
-        print("Finished transfer.")
+    def close(self) -> None:
+        """
+        Closes SCP channel.
+        """
+        print("\nClosing SCP channel.\n")
+        self.client.close()
+
+    def __exit__(self):
+        """
+        Defines shutdown behavior.
+        """
+        self.close()
