@@ -22,7 +22,8 @@ if __name__ == "__main__":
     # Asks for confirmation before downloading config files
     config_confirm = input("\nWould you like to backup server config files? (y/n): ")
     # If yes:
-    if config_confirm.upper() in "YES":
+    message = config_confirm.upper()
+    if message != "" and message in "YES":
         # For each of the defined filenames:
         for filename in SETUP_FILENAMES:
             # Back up to setup folder

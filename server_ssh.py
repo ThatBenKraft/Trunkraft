@@ -35,12 +35,17 @@ class SCP:
         Class allowing SCP file transfers.
         """
         try:
+            # Creates key from file
             key = paramiko.RSAKey.from_private_key_file(str(key_path))
+            # Creates SSH client
             ssh_client = paramiko.SSHClient()
+            # Some stackoverflow bs to make it work
             ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            # Connects to client
             print("\nConnecting to EC2...")
             ssh_client.connect(server, port, user, pkey=key)
             print("Connected.\n")
+            # Creates SCP client from SSH transport
             self.client = SCPClient(ssh_client.get_transport())  # type: ignore
         except Exception as error:
             # Prints errors

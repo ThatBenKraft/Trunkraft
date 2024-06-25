@@ -5,7 +5,7 @@ from server_ssh import SCP
 # Creates paths
 BASE_PATH = Path(__file__).parent
 SETUP_PATH = BASE_PATH / "Server Setup"
-EC2_PATH = "/home/ubuntu/scp_testing/"
+EC2_PATH = "/home/ubuntu/minecraft/"
 
 
 if __name__ == "__main__":
