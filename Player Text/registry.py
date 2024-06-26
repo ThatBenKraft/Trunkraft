@@ -33,7 +33,10 @@ class Registry:
             yield player
 
     def __str__(self) -> str:
-        return ", ".join(self._data)
+        if not self._data:
+            return "None"
+        else:
+            return ", ".join(self._data)
 
     def _save(self, players: list[str]) -> list[str]:
         """

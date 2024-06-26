@@ -52,7 +52,11 @@ class SCP:
             print("Error:", str(error))
 
     def upload(
-        self, local_path: Path, remote_path: str, empty_contents: bool = False
+        self,
+        local_path: Path,
+        remote_path: str,
+        empty_contents: bool = False,
+        ignored_items: list[str] = [],
     ) -> None:
         """
         Uploads item/s to the EC2 server.
@@ -64,8 +68,9 @@ class SCP:
                 # For each item in directory:
                 for item_path in local_path.iterdir():
                     # List and upload item
-                    print(f"[ {item_path.name} ]")
-                    self.client.put(item_path, remote_path, recursive=True)
+                    if item_path.name not in ignored_items:
+                        print(f"[ {item_path.name} ]")
+                        self.client.put(item_path, remote_path, recursive=True)
             else:
                 # List and upload item
                 print(f"[ {local_path.name} ]")

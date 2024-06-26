@@ -6,7 +6,8 @@ from registry import Registry
 from smtp import send_text
 
 # Defines paths
-LOG_PATH = Path("G:\\My Drive\\Minecraft\\Personal\\logs\\latest.log").as_posix()
+DEFAULT_WINDOWS_LOG_PATH = Path("G:\\My Drive\\Minecraft\\Personal\\logs\\latest.log").as_posix()
+DEFAULT_LINUX_LOG_PATH = Path("/home/ubuntu/minecraft/logs/latest.log").as_posix()
 # Defines join/leave message flags
 STATUS_MESSAGES = ("joined the game", "left the game")
 
@@ -18,8 +19,29 @@ def main() -> None:
     """
     Runs main script actions.
     """
+    sleep_time = float(input("Enter number of seconds between log checks: "))
+    path_option = input("Enter w for windows and l for linux (l/y): ")
+
+    if path_option.upper() == "W":
+        log_path = DEFAULT_WINDOWS_LOG_PATH
+    elif path_option.upper() == "L":
+        log_path = DEFAULT_LINUX_LOG_PATH
+    else:
+        raise ValueError("ur bad.")
+
+    id = 1
+    while(True):
+        check_logs(log_path, id)
+        time.sleep(sleep_time)
+        id += 1
+
+def check_logs(log_path: str = DEFAULT_WINDOWS_LOG_PATH, id: int = 0) -> None:
+    """
+    Acquires lines from `latest.log` and analyzes contents.
+    """
+    print(f"\n[{id}] Checking logs...")
     # Opens log file
-    with open(LOG_PATH, "r") as log_file:
+    with open(log_path, "r") as log_file:
         # Creates queue of last 100 lines
         last_lines = deque(log_file, 100)
     # Player name associated with status:
@@ -53,7 +75,7 @@ def process_line(line: str, logged_statuses: dict[str, int]) -> None:
             if message in line and player not in logged_statuses:
                 # Log player status and print
                 logged_statuses[player] = status
-                print(f"{player} {message}")
+                print(f">> {player} {message}")
 
 
 def extract_player_name(line: str) -> str:
@@ -113,4 +135,7 @@ def parse_status(logged_statuses: dict[str, int]) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nEnded logging.")

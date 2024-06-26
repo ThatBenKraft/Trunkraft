@@ -47,4 +47,4 @@ if __name__ == "__main__":
     # Sends custom email to default recipient
     subject = input("Enter subject: ")
     body = input("Enter body: ")
-    send_email(DEFAULT_RECIPIENT, subject, body)
+    send_email(subject, body, DEFAULT_RECIPIENT)
