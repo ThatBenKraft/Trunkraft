@@ -14,11 +14,11 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587  # For starttls
 
 
-def send_text(player: str) -> None:
+def send_text(message: str) -> None:
     """
     Sends a text about specified player joining the server.
     """
-    send_email(subject="", body=f"{player} joined Trunkraft")
+    send_email(subject="", body=message)
     print("Email sent successfully.")
 
 

@@ -21,7 +21,7 @@ DEFAULT_KEY_PATH = BASE_PATH / "ubuntu_login.pem"
 
 class SCP:
     """
-    Class allowing SCP file transfers.
+    Class for SCP file transfers.
     """
 
     def __init__(
@@ -32,7 +32,7 @@ class SCP:
         key_path: Path = DEFAULT_KEY_PATH,
     ) -> None:
         """
-        Class allowing SCP file transfers.
+        Initializes the SCP class and establishes an SSH connection.
         """
         try:
             # Creates key from file
@@ -49,7 +49,8 @@ class SCP:
             self.client = SCPClient(ssh_client.get_transport())  # type: ignore
         except Exception as error:
             # Prints errors
-            print("Error:", str(error))
+            print(f"Error connecting to server: {error}")
+            raise
 
     def upload(
         self,
@@ -77,7 +78,7 @@ class SCP:
                 self.client.put(local_path, remote_path, recursive=True)
         except Exception as error:
             # Prints errors
-            print("Error:", str(error))
+            print(f"Error during upload: {error}")
         finally:
             # Closes SCP connection
             print("Finished transfer.")
@@ -92,7 +93,7 @@ class SCP:
             self.client.get(remote_path, local_path, recursive=True)  # type: ignore
         except Exception as error:
             # Prints errors
-            print("Error:", str(error))
+            print(f"Error during download: {error}")
         finally:
             # Closes SSH connection
             print("Finished transfer.")
