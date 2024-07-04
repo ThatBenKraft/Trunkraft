@@ -2,7 +2,8 @@ from pathlib import Path
 
 import openpyxl
 
-from server_ssh import SCP
+from communication.server_ssh import SCP
+from setup_upload import EC2_DATAPACK_PATH, LOCAL_DATAPACK_PATH
 
 # Defines base player height
 BASE_HEIGHT_M = 1.8
@@ -14,11 +15,8 @@ HEIGHT_IN_COL = 3
 
 
 # Creates paths
-base_path = Path(__file__).parent
-WORKBOOK_PATH = base_path / "Player Heights.xlsx"
-DATAPACK_PATH = base_path / "Trunkraft Datapack"
-FUNCTION_PATH = DATAPACK_PATH / "data/trunkraft/function/player_size.mcfunction"
-EC2_DATAPACK_PATH = "/home/ubuntu/minecraft/trunkraft/datapacks/"
+WORKBOOK_PATH = Path(__file__).parent / "Player Heights.xlsx"
+FUNCTION_PATH = LOCAL_DATAPACK_PATH / "data/trunkraft/function/player_size.mcfunction"
 
 
 def update_heights() -> None:
@@ -67,6 +65,6 @@ if __name__ == "__main__":
     # Creates SCP client
     scp_client = SCP()
     # Uploads datapack to server
-    scp_client.upload(DATAPACK_PATH, EC2_DATAPACK_PATH)
+    scp_client.upload(LOCAL_DATAPACK_PATH, EC2_DATAPACK_PATH)
     # Closes SCP connection
     scp_client.close()

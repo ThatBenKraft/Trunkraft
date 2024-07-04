@@ -1,7 +1,7 @@
 from datetime import date
 from pathlib import Path
 
-from server_ssh import SCP
+from communication.server_ssh import SCP
 
 # Establishes base paths
 BASE_PATH = Path(__file__).parent
@@ -13,7 +13,7 @@ SETUP_FILENAMES = ("whitelist.json", "ops.json")
 if __name__ == "__main__":
     # Creates local filepath based on date
     date = date.today()
-    backup_path = BASE_PATH / "Backups" / f"{date.month}_{date.day}"
+    backup_path = BASE_PATH / "Backups" / f"{date.month}_{date.day}/"
 
     # Creates SCP client
     scp_client = SCP()
