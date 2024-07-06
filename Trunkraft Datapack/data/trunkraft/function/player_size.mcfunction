@@ -19,4 +19,4 @@ scoreboard players set Bluebearby height_in 61
 attribute bbboozer minecraft:generic.scale base set 1.016
 scoreboard players set bbboozer height_in 72
 
-schedule function trunkraft:player_size 3s
+schedule function trunkraft:player_size 2.5s

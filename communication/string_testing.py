@@ -90,10 +90,23 @@ test_lines = [
     "[18:58:32] [Server thread/INFO]: [Optica: Running function trunkraft:texting/tellraw]",
 ]
 
-for line in test_lines:
-    print(line)
-    pairing = extract_player_message(line)
-    if pairing:
-        print(pairing)
-    else:
-        print("Not status")
+# for line in test_lines:
+#     print(line)
+#     pairing = extract_player_message(line)
+#     if pairing:
+#         print(pairing)
+#     else:
+#         print("Not status")
+
+width = 10
+msg = "whoo"
+
+# print("=" * width + "\n" + f"{msg}".center(width) + "\n" + "=" * width)
+
+whee = {"a": 1, "b": 2}
+
+for letter, number in whee.items():
+    print(letter, "then", number)
+
+for letter in list({12: 10}):
+    print(letter)

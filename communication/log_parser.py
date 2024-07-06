@@ -1,13 +1,11 @@
 """
-Used for sending admin a text when a player joins the server.
+Used for breaking down game log files.
 """
 
 import time
-from collections import defaultdict, deque
-from dataclasses import dataclass
+from collections import deque
 from pathlib import Path
 
-from registry import Registry
 from server_ssh import EC2_DATAPACK_PATH, LOCAL_DATAPACK_PATH
 
 # Constants for log paths
@@ -17,20 +15,17 @@ DEFAULT_WINDOWS_LOG_PATH = Path(
 DEFAULT_LINUX_LOG_PATH = Path("/home/ubuntu/minecraft/logs/latest.log").as_posix()
 # Constants for mcfunction file paths
 LOCAL_MESSAGE_FUNCTION_PATH = (
-    LOCAL_DATAPACK_PATH / "data/trunkraft/function/texting/new_messages.mcfunction"
+    LOCAL_DATAPACK_PATH / "data/trunkraft/function/pending_messages.mcfunction"
 )
 EC2_MESSAGE_FUNCTION_PATH = (
     EC2_DATAPACK_PATH
-    + "Trunkraft Datapack/data/trunkraft/function/texting/new_messages.mcfunction"
+    + "Trunkraft Datapack/data/trunkraft/function/pending_messages.mcfunction"
 )
 # Various constants
 DEFAULT_LOG_LENGTH = 100
 DEFAULT_SLEEP_TIME = 60 * 5
 
-# Defines join/leave message flags
-# JOINED_MESSAGE = "joined the game"
-# LEFT_MESSAGE = "left the game"
-# STATUS_MESSAGES = {JOINED_MESSAGE: 1, LEFT_MESSAGE: -1}
+# Defines join/leave message targets
 JOINED_MESSAGE = "joined the game"
 LEFT_MESSAGE = "left the game"
 
@@ -51,18 +46,14 @@ def main() -> None:
 
     log_path, _ = select_os_paths()
 
-    # Creates registry or loads existing
-    online_players = Registry()
-
     try:
         check_id = 1
         while True:
             # Gets logs
             logs = get_logs(log_path, check_id)
-            # Runs registry actions based on last player statuses
+            # Gets player statuses from logs
             last_statuses = get_statuses(logs)
-            # Updates registry and notifies about player joins
-            get_player_status_updates(last_statuses, online_players)
+            print(f"Last statuses: {last_statuses}")
             # Waits before running again
             time.sleep(sleep_time)
             check_id += 1
@@ -76,11 +67,11 @@ def select_os_paths() -> tuple[str, str]:
     message function paths.
     """
     # Gets path choice
-    path_choice = input("Enter w for windows and l for linux (w/l): ").upper()
+    path_choice = input("\nEnter w for windows and l for linux (w/l): ").upper()
     # Splits choice between windows and linux
     if path_choice == "W":
         return DEFAULT_WINDOWS_LOG_PATH, str(LOCAL_MESSAGE_FUNCTION_PATH)
-    elif path_choice == "L":
+    elif path_choice == "L" or not path_choice:
         return DEFAULT_LINUX_LOG_PATH, str(EC2_MESSAGE_FUNCTION_PATH)
     else:
         raise ValueError("Invalid option. Use 'w' for Windows or 'l' for Linux.")
@@ -221,44 +212,6 @@ def skip_item(line: str, item: str) -> str:
         raise ValueError(f"Item {item} not in line {line}")
     # Returns stripped line
     return line[position + len(item) :]
-
-
-def get_player_status_updates(
-    last_statuses: dict[str, str], online_players: Registry
-) -> dict[str, set[str]]:
-    """
-    Updates registry based on last player statuses and notifies on player joins.
-    Returns dictionary with status messages keys to players who have just
-    become corresponding status.
-    """
-    # For every player online:
-    for player in online_players:
-        # If the player isn't in statuses:
-        if player not in last_statuses:
-            # Remove player from log
-            online_players.remove(player)
-
-    # Creates list for newly joined players
-    new_player_activity: dict[str, set[str]] = defaultdict(set)
-
-    # For player in statuses:
-    for player, last_status in last_statuses.items():
-        # If player left and is in registry:
-        if last_status == LEFT_MESSAGE and player in online_players:
-            # Adds player to newly left set
-            new_player_activity[LEFT_MESSAGE].add(player)
-            # Remove player from log
-            online_players.remove(player)
-        # If player joined and not in registry:
-        elif last_status == JOINED_MESSAGE and player not in online_players:
-            # Adds player to newly joined set
-            new_player_activity[JOINED_MESSAGE].add(player)
-            # Adds player to registry
-            online_players.add(player)
-
-    # Prints current server members
-    print(f"Currently in server: {online_players}")
-    return new_player_activity
 
 
 if __name__ == "__main__":

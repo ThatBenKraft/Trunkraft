@@ -27,7 +27,7 @@ if __name__ == "__main__":
         COMMUNICATIONS_PATH,
         EC2_PATH + "communication/",
         empty_contents=True,
-        ignored_items=["databases", "Log Logic.xlsx", "__pycache__"],
+        ignored_items=["Log Logic.xlsx", "__pycache__"],
     )
     scp_client.upload(LOCAL_DATAPACK_PATH, EC2_DATAPACK_PATH)
     # Closes SCP connection

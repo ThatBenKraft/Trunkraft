@@ -6,137 +6,195 @@ from pathlib import Path
 import log_parser
 from colors import Colors
 from gmail import GmailClient
+from log_parser import JOINED_MESSAGE, LEFT_MESSAGE
 from registry import Registry
 
 BASE_PATH = Path(__file__).parent
 DATABASES_PATH = BASE_PATH / "databases/"
 CHAT_LOG_PATH = DATABASES_PATH / "chat_log.json"
-PENDING_MESSAGES_PATH = DATABASES_PATH / "pending_messages.json"
+ONLINE_PLAYERS_REGISTRY_PATH = DATABASES_PATH / "online_players.json"
+PENDING_MESSAGES_REGISTRY_PATH = DATABASES_PATH / "pending_messages.json"
 
 # List of players to not notify about
-IGNORED_PLAYERS = ["Optica"]
+IGNORED_PLAYERS = []
 
-TEXT_WIDTH = 60
+TEXT_WIDTH = 50
 
 
 def print_title(line: str, color: str = Colors.RED) -> None:
-    print("\n" + f"{color}[[    {line}    ]]{Colors.RESET}".center(TEXT_WIDTH) + "\n")
+    """
+    Prints small title block for sections.
+    """
+    print(f"\n{color}" + f"[[    {line}    ]]".center(TEXT_WIDTH) + f"{Colors.RESET}\n")
+
+
+def acquire_preference(name: str) -> bool:
+    """
+    Gets notification preference from terminal.
+    """
+    confirmation = input(
+        f"\nWould you like to recieve {name} notifications? (y/n): "
+    ).upper()
+    return confirmation != "" and confirmation in "YES"
+
+
+def main():
+    """
+    Runs main communication looping actions.
+    """
+    # Creates list of preferences
+    preferences = [
+        acquire_preference(name) for name in ("player joined", "player left", "chat")
+    ]
+    # Creates communications object
+    communications = ServerCommunications(preferences)
+
+    loop_number = 0
+
+    try:
+        while True:
+            # Runs 2-way communications
+            communications.run(loop_number)
+            # End-of-loop actions
+            loop_number += 1
+            time.sleep(4)
+    except KeyboardInterrupt:
+        print("\nEnding communication.\n")
 
 
 def compile_message(player: str, message: str, timestamp: str = "") -> str:
+    """
+    Builds minecraft console string from components. Adds current timestamp if not
+    specified.
+    """
     # If timestamp not specified:
     if not timestamp:
         # Gets UTC time
         utc_now = datetime.now(timezone.utc)
         # Creates timestamp to match log format
-        timestamp = utc_now.strftime("[%H:%M:%S]")
+        timestamp = utc_now.strftime("%H:%M:%S")
+    # Builds message
     return f"[{timestamp}] <{player}> {message}"
 
 
-def main():
+class ServerCommunications:
 
-    # Acquires log and function path from user
-    log_path, message_function_path = log_parser.select_os_paths()
-    # Creates Gmail client
-    gmail_client = GmailClient()
-    # Creates registries for online players and chat log
-    online_players = Registry()
-    chat_log = Registry(CHAT_LOG_PATH, max_length=100)
-    pending_messages = Registry(PENDING_MESSAGES_PATH)
+    def __init__(self, preferences: list[bool]) -> None:
 
-    # Asks for chat message notifications confirmation
-    chat_confirmation = input(
-        "\nWould you like to recieve chat notifications? (y/n): "
-    ).upper()
-    # If yes:
-    chat_notifications = chat_confirmation != "" and chat_confirmation in "YES"
+        # Acquires log and function path from user
+        self.log_path, self.message_function_path = log_parser.select_os_paths()
+        # Creates Gmail client
+        self.gmail_client = GmailClient()
+        # Creates registries for online players, chat log, and pending messages
+        self.online_players = Registry(ONLINE_PLAYERS_REGISTRY_PATH)
+        self.chat_log = Registry(CHAT_LOG_PATH, max_length=100)
+        self.pending_messages = Registry(PENDING_MESSAGES_REGISTRY_PATH, data_type=dict)
+        # Gets notification preferences from console
+        self.PLAYER_JOINED_NOTIFICATIONS = preferences[0]
+        self.PLAYER_LEFT_NOTIFICATIONS = preferences[1]
+        self.CHAT_NOTIFICATIONS = preferences[2]
 
-    try:
-        # Begins looping
-        loop_number = 0
+    def run(self, loop_number: int):
+        """
+        Runs 2-way server communications.
+        """
 
-        while True:
-            print_title("MESSAGES FROM PHONE TO SERVER")
-            print(f"Pending messages to be sent: {pending_messages}")
-            # Removes any messages already in any part of chat log
-            for compiled_message in pending_messages:
-                if compiled_message in chat_log:
-                    pending_messages.remove(compiled_message)
+        print_title(str(loop_number), Colors.GREEN)
+        print_title("MESSAGES FROM PHONE TO SERVER")
+        # Processes messages from phone to server
+        self.process_text_messages()
 
-            # Gets unread emails
-            unread_emails = gmail_client.get_email(unread=True)
-            print(f"Unread emails: ", end="")
-            # For each unread email:
-            for email in unread_emails:
-                # Gets message from attachment
-                message = gmail_client.read_text_attachment(email)
-                print(message, end=", ")
-                # Adds details to message
-                compiled_message = compile_message("Server", message)
-                # Adds compiled message to pending deque
-                if compiled_message not in pending_messages:
-                    pending_messages.add(compiled_message)
-            print("")
+        print_title("MESSAGES FROM SERVER TO PHONE")
+        # Acquires logs from file
+        logs = log_parser.get_logs(self.log_path)
+        # Processes messages from server to phone
+        print_title("CHAT MESSAGES", Colors.MAGENTA)
+        self.process_chat_messages(logs)
+        print_title("PLAYER STATUSES", Colors.MAGENTA)
+        self.process_statuses(logs)
 
-            ## WRITING NEW INCOMING MESSAGES TO MCFUNCTION
-            # With function file:
-            with open(message_function_path, "w") as function_file:
-                # Writes reload header
-                function_file.write("reload\n")
-                # For email in list:
-                print(f"Messages written to function file: ", end="")
-                for message in pending_messages:
-                    # Writes message as command
-                    print(message, end=", ")
-                    function_file.write(f"say {message}\n")
-            print("")
+        print("\n" + "=" * TEXT_WIDTH)
 
-            print_title("MESSAGES FROM SERVER TO PHONE")
+    def process_text_messages(self) -> None:
+        """
+        Processes messages from phone to server.
+        """
+        # Gets unread emails
+        unread_emails = self.gmail_client.get_email(unread=True)
+        print(f"Unread emails: ", end="")
+        # For each unread email:
+        for email in unread_emails:
+            # Gets message from attachment
+            message = self.gmail_client.read_text_attachment(email)
+            print(f"[ {message} ]", end=" ")
+            # Adds details to message
+            compiled_message = compile_message("Server", message)
+            # Adds compiled message as key to raw message to pending dict
+            if compiled_message not in self.pending_messages:
+                self.pending_messages[compiled_message] = message
+        print("")
 
-            # Acquires logs from file
-            logs = log_parser.get_logs(log_path)
+        # With function file:
+        with open(self.message_function_path, "w") as function_file:
+            # For email in list:
+            print(f"Messages written to function file: ", end="")
+            function_file.write(f"## Incoming server messages:\n\n")
+            # For the compiled and raw version of each pending message:
+            for compiled_message, message in self.pending_messages.items():
+                # Removes message if already in chat log
+                if compiled_message in self.chat_log:
+                    self.pending_messages.remove(compiled_message)
+                else:
+                    # Writes message as command in function file
+                    command = f"say {message}\n"
+                    print(f"[ {command} ]", end=" ")
+                    function_file.write(command)
+        print("")
 
-            # Gets chat messages from logs
-            chat_messages = log_parser.get_messages(logs)
-            # For each chat message:
-            for player, message, timestamp in chat_messages:
-                # Continue to next message if in chat log
-                timestamped_message = compile_message(player, message, timestamp)
-                # timestamped_message = f"[{timestamp}] <{player}> {message}"
-                if timestamped_message in chat_log:
-                    continue
-                # Adds raw line to chat log
-                print(f"New message: {timestamped_message}")
-                chat_log.add(timestamped_message)
-                # If enabled, sends message as text
-                if chat_notifications:
-                    gmail_client.send_text(f"<{player}> {message}")
+    def process_chat_messages(self, logs: deque) -> None:
+        """
+        Sends notifications about most recent chat messages.
+        """
+        # Gets chat messages from logs
+        chat_messages = log_parser.get_messages(logs)
+        # Iterating over details of each chat message:
+        for player, message, timestamp in chat_messages:
+            # Continue to next message if in chat log
+            timestamped_message = compile_message(player, message, timestamp)
+            # Skips if chat already in log
+            if timestamped_message in self.chat_log:
+                continue
+            # Adds line to chat log
+            print(f"New message: {timestamped_message}")
+            self.chat_log.add(timestamped_message)
+            # If enabled, sends message as text
+            if self.CHAT_NOTIFICATIONS:
+                self.gmail_client.send_text(f"<{player}> {message}")
 
-            print_title("PLAYER STATUSES", Colors.MAGENTA)
+    def process_statuses(self, logs: deque[str]) -> None:
+        """
+        Sends notifications about most recent player statuses.
+        """
+        # Gets player statuses from logs
+        player_statuses = log_parser.get_statuses(logs)
+        print(f"Recent statuses: {player_statuses}")
 
-            # Gets player statuses from logs
-            statuses = log_parser.get_statuses(logs)
-            print(f"Recent statuses: {statuses}")
-            # Updates player registry with statuses
-            new_player_activity = log_parser.get_player_status_updates(
-                statuses, online_players
-            )
-            print(f"\nNew activity: {new_player_activity}")
-            # Send text about each player in joined set
-            for player in new_player_activity[log_parser.JOINED_MESSAGE]:
-                gmail_client.send_text(f"{player} just joined Trunkraft")
-            # Send text about each player in left set
-            for player in new_player_activity[log_parser.LEFT_MESSAGE]:
-                gmail_client.send_text(f"{player} just left Trunkraft")
-
-            print("\n" + "=" * TEXT_WIDTH)
-
-            # End-of-loop actions
-            loop_number += 1
-            time.sleep(4)
-
-    except KeyboardInterrupt:
-        print("\nEnding communication.\n")
+        # Iterating over player statuses:
+        for player, last_status in player_statuses.items():
+            # If player last joined and not in registry:
+            if last_status == JOINED_MESSAGE and player not in self.online_players:
+                # Add to registry
+                self.online_players.add(player)
+                # Send text if preference set
+                if self.PLAYER_JOINED_NOTIFICATIONS and player not in IGNORED_PLAYERS:
+                    self.gmail_client.send_text(f"{player} just joined Trunkraft")
+            # If player last left and in registry:
+            elif last_status == LEFT_MESSAGE and player in self.online_players:
+                # Remove from registry
+                self.online_players.remove(player)
+                # Send text if preference set
+                if self.PLAYER_LEFT_NOTIFICATIONS and player not in IGNORED_PLAYERS:
+                    self.gmail_client.send_text(f"{player} just left Trunkraft")
 
 
 if __name__ == "__main__":
